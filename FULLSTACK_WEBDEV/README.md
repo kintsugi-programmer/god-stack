@@ -7,6 +7,7 @@
 
 # Chapters
 - [Chapter 1: Before Web Dev Journey](#chapter-1-before-web-dev-journey)
+- [Chapter 2: Basics of Web Development](#chapter-2-basics-of-web-development)
 
 
 # Table of Contents
@@ -109,6 +110,42 @@
       - [Extension Conflicts](#extension-conflicts)
       - [Performance Issues](#performance-issues)
     - [VSC Shortcuts CheatSheet](#vsc-shortcuts-cheatsheet)
+- [Chapter 2: Basics of Web Development](#chapter-2-basics-of-web-development)
+  - [Chapter 2.1.: How the Internet Works](#chapter-21-how-the-internet-works)
+    - [What is the Internet?](#what-is-the-internet)
+    - [Understanding IP Addresses: The Digital Address System](#understanding-ip-addresses-the-digital-address-system)
+    - [The Role of Internet Service Providers (ISPs)](#the-role-of-internet-service-providers-isps)
+    - [Domain Name System (DNS): The Internet's Phone Book](#domain-name-system-dns-the-internets-phone-book)
+    - [Data Transmission Through Packet Switching](#data-transmission-through-packet-switching)
+    - [The TCP/IP Protocol Stack](#the-tcpip-protocol-stack)
+    - [HTTP Requests and Responses](#http-requests-and-responses)
+    - [Analyzing Network Activity with Browser Tools](#analyzing-network-activity-with-browser-tools)
+    - [Web Hosting and Cloud Infrastructure](#web-hosting-and-cloud-infrastructure)
+    - [The Engineering Marvel Behind Internet Connectivity](#the-engineering-marvel-behind-internet-connectivity)
+  - [Chapter 2.2.: How the Web Works and the Roles of Front-end, Back-end, and Databases](#chapter-22-how-the-web-works-and-the-roles-of-front-end-back-end-and-databases)
+    - [1. Client-Server Architecture](#1-client-server-architecture)
+      - [1.1 HTTP Request](#11-http-request)
+      - [1.2 Server Processing](#12-server-processing)
+      - [1.3 HTTP Response](#13-http-response)
+    - [2. Roles of HTML, CSS, and JavaScript](#2-roles-of-html-css-and-javascript)
+    - [3. Front-end vs. Back-end](#3-front-end-vs-back-end)
+      - [3.1 Front-end (Client Side)](#31-front-end-client-side)
+      - [3.2 Back-end (Server Side)](#32-back-end-server-side)
+      - [3.3 Communication Between Front-end and Back-end](#33-communication-between-front-end-and-back-end)
+    - [4. Databases: Types and Roles](#4-databases-types-and-roles)
+      - [4.1 Relational Databases (SQL)](#41-relational-databases-sql)
+      - [4.2 NoSQL Databases](#42-nosql-databases)
+      - [4.3 In-Memory Stores](#43-in-memory-stores)
+    - [5. Common Industry Icons and Nomenclature](#5-common-industry-icons-and-nomenclature)
+    - [6. Putting It All Together: Application Flow](#6-putting-it-all-together-application-flow)
+    - [7. Next Steps](#7-next-steps)
+  - [Chapter 2.3.: Front End, Back End, APIs, and Client–Server Architecture](#chapter-23-front-end-back-end-apis-and-clientserver-architecture)
+    - [1. Front End](#1-front-end)
+    - [2. Back End](#2-back-end)
+    - [3. API (Application Programming Interface)](#3-api-application-programming-interface)
+    - [4. Client–Server Interaction Flow](#4-clientserver-interaction-flow)
+      - [Diagrammatic Summary](#diagrammatic-summary)
+    - [Next Steps](#next-steps)
 
 # Chapter 1: Before Web Dev Journey
 
@@ -950,11 +987,373 @@ These are some of the most common shortcuts of VSCode. You don't need to memoriz
 
 *End of VSCode Shortcuts*
 
-[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/66276055/f1691960-0fde-4b15-a7c9-7f3d9f9b69fb/VSCode-shortcuts.pdf)
+# Chapter 2: Basics of Web Development
+## Chapter 2.1.: How the Internet Works
 
+Understanding how the internet functions is crucial for any aspiring web developer. The process of connecting one computer to another across the globe represents some of the most impressive engineering achievements of our time. This comprehensive explanation will demystify the internet's core concepts and operations.
 
+### What is the Internet?
 
+At its most fundamental level, the internet is a worldwide computer network that transmits data and media across interconnected devices. The basic concept is simple: connecting your computer to another computer anywhere in the world. However, the engineering behind this seemingly straightforward task is remarkably sophisticated.[1]
 
+The internet works by using a packet routing network that follows Internet Protocol (IP) and Transport Control Protocol (TCP). These protocols work together to ensure that data transmission across the internet is consistent and reliable, regardless of which device you're using or where you're located.[1]
+
+### Understanding IP Addresses: The Digital Address System
+
+Every device connected to the internet requires a unique identifier called an IP address. An IP address serves as a "digital home address," allowing devices to be uniquely identified within the network. Without an IP address, a device cannot send or receive data on the network.[2][3]
+
+IP addresses appear as numerical labels such as 192.168.2.5 or 203.0.113.72. These addresses are composed of four sets of numbers (octets) separated by periods. Each part serves a specific purpose in routing data across networks:[4][5][3]
+
+- The network portion identifies the group of devices
+- The host portion identifies the specific device within that group
+
+The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA) and five regional Internet registries (RIRs). These organizations distribute IP addresses to Internet Service Providers (ISPs) and large institutions, who then assign them to individual users.[3]
+
+### The Role of Internet Service Providers (ISPs)
+
+ISPs are companies that provide individuals and organizations access to the internet and related services. They serve as the critical link between your device and the broader internet infrastructure. ISPs are classified into three tiers:[6][7]
+
+**Tier 1 ISPs** have the most global reach and own enough physical network lines to carry most traffic independently. They form the backbone of the internet infrastructure.
+
+**Tier 2 ISPs** have regional or national reach and connect Tier 1 and Tier 3 providers. They focus on consumer and commercial customers.
+
+**Tier 3 ISPs** connect customers to the internet using other ISPs' networks, typically serving local businesses and consumer markets.
+
+When you want to visit a website like chaicode.com, your request first goes to your ISP. The ISP examines your request and determines how to route it through the internet infrastructure.[1]
+
+### Domain Name System (DNS): The Internet's Phone Book
+
+Since remembering numerical IP addresses for every website would be impractical, the internet uses the Domain Name System (DNS). DNS acts as the internet's phone book, translating human-readable domain names like www.google.com into IP addresses that computers understand.[8][9][10][4]
+
+The DNS resolution process involves several steps:[8][4]
+
+1. **User Input**: You enter a website address into your browser
+2. **Local Cache Check**: Your browser checks if it has recently looked up the domain
+3. **DNS Resolver Query**: If not cached, your computer queries a DNS resolver (usually provided by your ISP)
+4. **Root DNS Server**: The resolver contacts a root DNS server for direction
+5. **TLD Server**: The Top-Level Domain server (like .com or .org) provides further routing information
+6. **Authoritative DNS Server**: This server holds the actual IP address for the requested domain
+7. **Final Response**: The IP address is returned to your computer, enabling connection to the website
+
+This entire process happens in milliseconds, enabling fast and efficient web browsing.[8]
+
+### Data Transmission Through Packet Switching
+
+The internet uses a method called packet switching to transmit data efficiently. When you send information across the internet, it's not transmitted as one large block. Instead, the data is divided into smaller units called packets.[11][12][13]
+
+Each packet contains:[14][2]
+- The source IP address (sender's device)
+- The destination IP address (receiver's device)  
+- A portion of the actual data being transmitted
+- Control information for routing and reassembly
+
+Packets may take different routes through the network, optimizing resource usage and avoiding congested paths. This dynamic routing ensures efficient data transmission even when parts of the network are busy or fail. At the destination, packets are reassembled in the correct order to reconstruct the original message.[12][15]
+
+### The TCP/IP Protocol Stack
+
+The internet relies on a four-layer protocol stack called TCP/IP:[16][17][18]
+
+**Application Layer**: Formats data for specific applications using protocols like HTTP (web browsing), SMTP (email), and FTP (file transfer).[17][18]
+
+**Transport Layer**: Maintains end-to-end communications using TCP for reliable delivery or UDP for faster, less reliable transmission.[18]
+
+**Internet/Network Layer**: Handles packet routing between networks using IP protocols.[18]
+
+**Physical/Link Layer**: Manages actual data transmission over physical media like Ethernet, fiber optic cables, or wireless connections.[18]
+
+### HTTP Requests and Responses
+
+When you visit a website, your browser communicates using the Hypertext Transfer Protocol (HTTP). The process involves:[19][20][21]
+
+1. **Client Request**: Your browser sends an HTTP request to the web server
+2. **DNS Resolution**: The domain name is resolved to an IP address
+3. **TCP Connection**: A connection is established with the server
+4. **Request Processing**: The server processes your request and prepares a response
+5. **Server Response**: The server sends back the requested content with HTTP status codes
+6. **Content Rendering**: Your browser processes and displays the received content
+
+HTTP requests include headers that provide additional information about the browser, preferred language, and other details. The server responds with headers containing information about the content type, cookies, and other metadata.[21]
+
+### Analyzing Network Activity with Browser Tools
+
+Modern browsers provide powerful developer tools for examining network activity. In Chrome, you can access these tools by:[22][23]
+
+1. Right-clicking on a webpage and selecting "Inspect"
+2. Navigating to the "Network" tab
+3. Reloading the page to see all network requests
+
+The Network tab reveals:[23][22]
+- All HTTP requests made by the page
+- Request and response headers
+- Loading times and file sizes
+- Status codes and error information
+- Payload data and cookies
+
+This tool is invaluable for web developers to analyze performance, debug issues, and understand how websites load resources.
+
+### Web Hosting and Cloud Infrastructure
+
+While you can technically host a website from your personal computer, professional web hosting services provide reliable, always-available infrastructure. Major cloud providers include:[24][25]
+
+- **Amazon Web Services (AWS)**: Offers scalable cloud computing services
+- **Google Cloud Platform**: Provides robust hosting and development tools  
+- **Microsoft Azure**: Delivers enterprise-grade cloud solutions
+- **DigitalOcean**: Focuses on developer-friendly cloud hosting
+- **Cloudways**: Provides managed cloud hosting services
+
+These providers maintain servers in data centers worldwide, ensuring websites remain accessible 24/7 with minimal downtime.[24]
+
+### The Engineering Marvel Behind Internet Connectivity
+
+The internet represents an extraordinary engineering achievement that seamlessly connects billions of devices worldwide. From packet switching algorithms that optimize data flow to DNS systems that instantly resolve domain names, every component works together to create the connected world we rely on daily.
+
+Understanding these fundamentals provides essential knowledge for web developers. Whether you're debugging network issues using browser developer tools, optimizing website performance, or deploying applications to cloud platforms, grasping how the internet works will make you a more effective developer.
+
+The next time you click a link or load a webpage, remember the sophisticated dance of protocols, routing decisions, and data packet reassembly happening behind the scenes. This remarkable system continues to evolve, supporting ever-increasing demands for global connectivity and digital communication.
+
+[1](https://www.hp.com/us-en/shop/tech-takes/how-does-the-internet-work)
+[2](https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-an-ip-address/)
+[3](https://en.wikipedia.org/wiki/IP_address)
+[4](https://www.techtarget.com/searchnetworking/definition/domain-name-system)
+[5](http://www.cisco.com/en/US/docs/security/vpn5000/manager/reference/guide/appA.html)
+[6](https://www.techtarget.com/whatis/definition/ISP-Internet-service-provider)
+[7](https://www.thousandeyes.com/learning/glossary/isp-internet-service-provider)
+[8](https://www.geeksforgeeks.org/computer-networks/domain-name-system-dns-in-application-layer/)
+[9](https://www.ibm.com/think/topics/dns)
+[10](https://www.cloudflare.com/learning/dns/what-is-dns/)
+[11](https://www.geeksforgeeks.org/blogs/how-does-the-internet-work/)
+[12](https://ascendantusa.com/2024/12/30/packet-switching/)
+[13](https://en.wikipedia.org/wiki/Packet_switching)
+[14](https://www.geeksforgeeks.org/computer-networks/what-is-internet-protocol-ip/)
+[15](https://lightyear.ai/tips/what-is-packet-switching)
+[16](https://3hcloud.com/blog/technologies/tcp-ip-protocol-stack-guide-for-beginners-basics-layer-model/)
+[17](https://www.101computing.net/tcp-ip-stack-network-layers-and-protocols/)
+[18](https://www.techtarget.com/searchnetworking/definition/TCP-IP)
+[19](https://www.browserstack.com/guide/http-request)
+[20](https://launchschool.com/books/http/read/making_requests)
+[21](https://privacysandbox.google.com/cookies/basics/http)
+[22](https://requestly.com/blog/chrome-developer-tools-network-tab/)
+[23](https://www.geeksforgeeks.org/computer-networks/network-tab-in-google-chrome-browser/)
+[24](https://www.whatsthehost.com)
+[25](https://www.cnet.com/tech/services-and-software/best-cloud-web-hosting/)
+[26](https://budibase.com/blog/how-to-make-a-web-app/)
+[27](https://www.reddit.com/r/learnprogramming/comments/120jxoj/what_should_you_know_before_learning_to_program/)
+[28](https://www.freecodecamp.org/news/learn-to-code-book/)
+[29](https://signalsandthreads.com/writing-technically/)
+[30](https://www.whatismyisp.com/articles/what-is-an-isp)
+[31](https://en.wikipedia.org/wiki/Internet_of_things)
+[32](https://www.cloudflare.com/learning/network-layer/how-does-the-internet-work/)
+[33](https://www.geeksforgeeks.org/computer-networks/isp-full-form/)
+[34](https://blog.codinghorror.com/please-dont-learn-to-code/)
+[35](https://www.lenovo.com/in/en/glossary/what-is-internet/)
+[36](https://davkurukshetra.edu.in/File/99/NoticeBoard_b38a8cd7-ab33-4aa0-9896-4ab819388e57_cbse%20XII%20sample%20papers.pdf)
+[37](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work)
+[38](https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison)
+[39](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview)
+[40](https://comparecloud.in)
+[41](https://documentation.softwareag.com/adabas/wcp632mfr/wtc/wtc_prot.htm)
+[42](https://support.bolddesk.com/kb/article/14611/guide-to-accessing-console-tab--network-tab--shortcuts-for-devtools)
+[43](https://www.youtube.com/watch?v=LBgfSwX4GDI)
+[44](https://www.geeksforgeeks.org/computer-networks/packet-switching-and-delays-in-computer-network/)
+
+## Chapter 2.2.: How the Web Works and the Roles of Front-end, Back-end, and Databases
+
+**Main Takeaway:**  
+Understanding the web’s underlying flow—how browsers, servers, and databases communicate—and distinguishing front-end from back-end responsibilities are essential foundations before writing any HTML, CSS, or JavaScript.
+
+***
+
+### 1. Client-Server Architecture  
+When you browse to a URL (for example, chicode.com), your browser (the **client**) sends an HTTP request to the **server** hosting that site. The server processes the request—possibly consulting its database—and returns an HTTP response consisting of HTML, CSS, and JavaScript files. The browser then renders these resources into the interactive page you see.
+
+#### 1.1 HTTP Request  
+- The browser constructs a request message, specifying the URL, method (GET, POST, etc.), headers, and optionally payload data (e.g., form fields).  
+- The server endpoint receives the request and routes it to the appropriate handler.
+
+#### 1.2 Server Processing  
+- If the requested page requires dynamic data (such as user-specific content), the server queries its **database** to fetch or verify information.  
+- For a login attempt, the server checks credentials against stored user records and returns a success or error response.  
+- For a static homepage, no database lookup may be needed; the server simply loads and returns the HTML file.
+
+#### 1.3 HTTP Response  
+- The server responds with status codes (200 OK, 404 Not Found, 500 Internal Server Error, etc.)  
+- The response body contains the raw **HTML** markup first, followed by linked **CSS** stylesheets and **JavaScript** scripts.
+
+***
+
+### 2. Roles of HTML, CSS, and JavaScript  
+Each of these front-end technologies plays a distinct role in the browser’s rendering pipeline:
+
+1. **HTML (HyperText Markup Language) – Structure**  
+   - Version: HTML5  
+   - Defines the semantic structure (headings, paragraphs, lists, links, form elements).  
+   - Provides accessibility hooks (ARIA roles, semantic tags).
+
+2. **CSS (Cascading Style Sheets) – Presentation**  
+   - Version: CSS3  
+   - Controls layout, colors, typography, spacing, responsive breakpoints, and visual effects.  
+   - Allows positioning of elements (e.g., buttons at specific corners).
+
+3. **JavaScript – Behavior**  
+   - Adds interactivity: form validation, dropdown menus, dynamic content updates.  
+   - Communicates back to the server via AJAX/fetch calls, sending form data or retrieving JSON.  
+   - Enables single-page application frameworks to update the view without full page reloads.
+
+***
+
+### 3. Front-end vs. Back-end  
+Understanding the distinction helps organize development responsibilities and technology choices.
+
+#### 3.1 Front-end (Client Side)  
+- Runs in the user’s browser.  
+- Technologies: HTML, CSS, JavaScript (plus frameworks like React, Vue, or Angular).  
+- Responsibilities: user interface design, accessibility, responsive layouts, client-side validation, UX interactions.
+
+#### 3.2 Back-end (Server Side)  
+- Runs on the server.  
+- Technologies: Node.js, Python, Java, Ruby, PHP, etc.; server frameworks (Express, Django, Spring).  
+- Responsibilities: routing HTTP requests, business logic, database CRUD operations, authentication, authorization, data validation, building APIs.
+
+#### 3.3 Communication Between Front-end and Back-end  
+- Typically via RESTful APIs or GraphQL over HTTP/HTTPS.  
+- Data payloads in JSON or XML.  
+- Authentication tokens (cookies, JWT) are exchanged to maintain sessions and secure endpoints.
+
+***
+
+### 4. Databases: Types and Roles  
+Databases store, retrieve, and manage persistent data. The server interacts with one or more databases depending on application needs.
+
+#### 4.1 Relational Databases (SQL)  
+- Examples: MySQL, PostgreSQL, SQLite  
+- Structured schema: tables, rows, columns, relationships (foreign keys).  
+- Query language: SQL (Structured Query Language).  
+- ACID guarantees ensure consistency and reliability.
+
+#### 4.2 NoSQL Databases  
+- Examples: MongoDB, Cassandra, Redis  
+- Schema-less or flexible schema: documents, key-value pairs, wide-column stores, or graphs.  
+- High scalability and performance for large datasets or unstructured data.  
+- Often used for caching, session storage, real-time analytics, and content delivery.
+
+#### 4.3 In-Memory Stores  
+- Examples: Redis, Memcached  
+- Store data in RAM for ultra-fast read/write.  
+- Commonly used for caching frequently accessed data or session information.
+
+***
+
+### 5. Common Industry Icons and Nomenclature  
+Familiarity with standard icons and terminology accelerates comprehension of architecture diagrams:
+
+- **Database Icon**: stacked cylindrical disks representing data storage.  
+- **Server Icon**: a rectangular box or rack indicating application logic hosts.  
+- **Browser (Client) Icon**: a laptop or monitor symbol showing end-user interface.  
+- **HTML5 Logo**: stylized shield with “5” marking.  
+- **CSS3 Logo**: blue shield with “3.”  
+- **JavaScript**: often denoted by “JS” or its yellow square logo.
+
+Learning these icons helps you read and design system diagrams fluently.
+
+***
+
+### 6. Putting It All Together: Application Flow  
+
+1. **User Action**: Enter URL or click a link in the browser.  
+2. **Browser Request**: Sends HTTP request to server endpoint.  
+3. **Server Logic**:  
+   a. Parses route and request parameters.  
+   b. Queries database if needed (e.g., fetch page content or verify login).  
+   c. Applies business rules.  
+4. **Response Assembly**:  
+   a. Constructs HTML to define page structure.  
+   b. Links CSS for styling.  
+   c. Includes JavaScript for interactivity.  
+5. **Browser Renders Page**:  
+   a. Parses HTML into DOM.  
+   b. Applies CSS rules to style the DOM.  
+   c. Executes JavaScript to attach event listeners and dynamic behaviors.  
+6. **Interactive Experience**: User interacts; JavaScript may send further API calls, repeating the cycle.
+
+***
+
+### 7. Next Steps  
+Having grasped this **big-picture overview**, subsequent lessons will delve into:
+
+- HTTP status codes, headers, and the networking tab inspection.  
+- Creating semantic HTML structures and accessible layouts.  
+- Writing responsive CSS and modern layout systems (Flexbox, Grid).  
+- Implementing interactive behaviors with Vanilla JavaScript and front-end frameworks.  
+- Designing and querying databases for back-end APIs.  
+- Setting up server environments, routing, and middleware.  
+
+With this foundational understanding, moving into the **code-heavy** sections will be more intuitive and purposeful.
+
+## Chapter 2.3.: Front End, Back End, APIs, and Client–Server Architecture
+
+**Key Takeaway:** Web applications consist of two main parts—**front end** (user interface) and **back end** (server logic and data storage)—which communicate via **APIs** (application programming interfaces) using standardized data formats like JSON.
+
+***
+
+### 1. Front End  
+- Located on the **client side** (the user’s browser or app).  
+- Core technologies:  
+  - **HTML**: Defines page structure and content.  
+  - **CSS**: Styles and lays out elements; often enhanced by libraries/frameworks such as Bootstrap or Tailwind to accelerate development and add utility classes.  
+  - **JavaScript**: Provides interactivity and dynamic behavior; extended by frameworks/libraries like React, Vue, or Svelte, which build on JavaScript’s core.  
+- Role: Render content, handle user input, and make requests to the back end through APIs.
+
+### 2. Back End  
+- Located on the **server side** (runs as server software, not necessarily dedicated hardware).  
+- Components:  
+  1. **Programming Language / Runtime**  
+     - Examples: **Node.js** (JavaScript), PHP, Python (Django/Flask), Ruby on Rails, Java, etc.  
+     - Handles application logic, routing, authentication, validation, and business rules.  
+  2. **Database**  
+     - Stores and retrieves persistent data.  
+     - SQL databases (e.g., MySQL, PostgreSQL) use relational tables.  
+     - NoSQL databases (e.g., MongoDB) store JSON-like documents.  
+- Role: Process incoming API requests, perform operations on data, and return responses.
+
+### 3. API (Application Programming Interface)  
+- Serves as a **gateway** or “waiter” between front end and back end.  
+- Exposes **endpoints** (doors) such as `/login`, `/signup`, `/users`, etc.  
+- Uses a **universal data format**—commonly **JSON**—so any front end or back end technology can interoperate.  
+  - **Request**: Front end “knocks” an API endpoint and sends data formatted as JSON.  
+  - **Response**: Back end returns data in JSON format.  
+- Decouples front end and back end implementations, allowing independent development, language choice, and scalability.
+
+### 4. Client–Server Interaction Flow  
+1. **User Action** triggers front end code (e.g., clicking “Login”).  
+2. Front end sends an **HTTP request** with JSON payload to the API endpoint.  
+3. API routes the request to appropriate back end logic.  
+4. Back end processes the request, interacts with the database as needed, and generates a JSON response.  
+5. API returns the JSON response to the front end.  
+6. Front end parses the response and updates the UI accordingly.
+
+***
+
+#### Diagrammatic Summary  
+```
+[User’s Browser/App]
+   └─(HTML,CSS,JS,React,Vue,…)──► [API Layer] ─► [Server Logic (Node.js, Python,…) + Database (MySQL, MongoDB,…)]
+                     ◄───────────────────────────────────────────────────────────────────────────┘
+```
+
+- **Front End**: HTML, CSS, JavaScript (+ frameworks)  
+- **API Layer**: Unified interface with endpoints and JSON format  
+- **Back End**: Server-side language/runtime + database  
+
+***
+
+### Next Steps  
+- **HTML Fundamentals**: Structure pages; basic tags and semantics.  
+- **CSS Overview**: Core syntax; brief on frameworks (Bootstrap, Tailwind).  
+- **JavaScript Essentials**: Syntax, DOM manipulation; introduction to front end frameworks.  
+- **Node.js Back End**: Setting up routes, middleware, and connecting to a database (MongoDB).  
+- **Database Basics**: CRUD operations in SQL vs. NoSQL.  
+
+With this foundational overview, you’ll progress into coding your first HTML page, styling it with CSS, and wiring up dynamic behavior with JavaScript, before moving on to back end development and database integration.
 
 
 

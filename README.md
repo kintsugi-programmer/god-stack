@@ -5,16 +5,12 @@
 
 > Disclaimer: The content presented here is a curated blend of my personal learning journey, experiences, open-source documentation, and invaluable knowledge gained from diverse sources. I do not claim sole ownership over all the material; this is a community-driven effort to learn, share, and grow together.
 
-
-
-
 ## The DeveloperProMax Challenge
-Developer Pro Max is a 180-day journey to elite developer mastery. From Advanced DSA and Core CS to Full-Stack Web Development, DevOps, and System Design, this challenge is designed to build discipline, depth, and real-world skills. Every day is a step toward becoming a developer who doesn’t just code, but engineers systems, solves problems, and commands the full stack with confidence.
 
+Developer Pro Max is a 180-day journey to elite developer mastery. From Advanced DSA and Core CS to Full-Stack Web Development, DevOps, and System Design, this challenge is designed to build discipline, depth, and real-world skills. Every day is a step toward becoming a developer who doesn’t just code, but engineers systems, solves problems, and commands the full stack with confidence.
 
 - 📚 Learn DSA, LeetCode, Web Dev, DevOps, and Core CS (OS, CN, DBMS, OOP, SD). 
 - ⚙️ Build. Deploy. Dominate.
-
 - ☑ DSA 1.5 hrs
 - ☑ Dev 1.5 hrs
 - ☑ LeetCode 1–2 questions
