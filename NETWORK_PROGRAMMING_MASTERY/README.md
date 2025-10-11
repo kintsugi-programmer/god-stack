@@ -1,4 +1,4 @@
-# NETWORK_PROGRAMMING
+# NETWORK_PROGRAMMING_MASTERY
 > “Ctrl+Z is life’s greatest gift - if only it worked outside computers.” 
 
 - Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
@@ -6,7 +6,7 @@
 > Disclaimer: The content presented here is a curated blend of my personal learning journey, experiences, open-source documentation, and invaluable knowledge gained from diverse sources. I do not claim sole ownership over all the material; this is a community-driven effort to learn, share, and grow together.
 
 ## Table of Contents
-- [NETWORK\_PROGRAMMING](#network_programming)
+- [NETWORK\_PROGRAMMING\_MASTERY](#network_programming_mastery)
   - [Table of Contents](#table-of-contents)
 - [1 Simple Web Client Implementation Using Sockets: Super Depth Notes](#1-simple-web-client-implementation-using-sockets-super-depth-notes)
   - [1. Introduction to Sockets and Networking](#1-introduction-to-sockets-and-networking)

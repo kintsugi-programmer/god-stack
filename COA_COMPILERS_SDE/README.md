@@ -1,4 +1,6 @@
-# COA_COMPILERS Top Interview Questions
+# COA_COMPILERS_SDE
+
+- Top Interview Questions
 
 > “C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.” — Bjarne Stroustrup
 
@@ -7,7 +9,7 @@
 > Disclaimer: The content presented here is a curated blend of my personal learning journey, experiences, open-source documentation, and invaluable knowledge gained from diverse sources. I do not claim sole ownership over all the material; this is a community-driven effort to learn, share, and grow together.
 
 ## Table of Contents
-- [COA\_COMPILERS Top Interview Questions](#coa_compilers-top-interview-questions)
+- [COA\_COMPILERS\_SDE](#coa_compilers_sde)
   - [Table of Contents](#table-of-contents)
   - [Compilers](#compilers)
     - [1. What is a Compiler?](#1-what-is-a-compiler)

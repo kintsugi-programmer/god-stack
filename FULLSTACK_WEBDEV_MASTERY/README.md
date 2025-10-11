@@ -1,4 +1,4 @@
-# FULLSTACK_WEBDEV
+# FULLSTACK_WEBDEV_MASTERY
 > “Measuring programming progress by lines of code is like measuring aircraft building progress by weight.” — Bill Gates
 
 - Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
@@ -11,7 +11,7 @@
 
 
 # Table of Contents
-- [FULLSTACK\_WEBDEV](#fullstack_webdev)
+- [FULLSTACK\_WEBDEV\_MASTERY](#fullstack_webdev_mastery)
 - [Chapters](#chapters)
 - [Table of Contents](#table-of-contents)
 - [Chapter 1: Before Web Dev Journey](#chapter-1-before-web-dev-journey)

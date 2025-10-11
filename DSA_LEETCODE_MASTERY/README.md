@@ -1,10 +1,11 @@
-# DSA_LEETCODE
+# DSA_LEETCODE_MASTERY
 ## Table of Contents
-- [DSA\_LEETCODE](#dsa_leetcode)
+- [DSA\_LEETCODE\_MASTERY](#dsa_leetcode_mastery)
   - [Table of Contents](#table-of-contents)
   - [Array \& Hashing](#array--hashing)
     - [1 Concatenation of Array \[Easy\] \[Google, Adobe, Facebook\]](#1-concatenation-of-array-easy-google-adobe-facebook)
     - [2 Contains Duplicate \[Easy\] \[Airbnb, Amazon, Apple ,Microsoft, Tcs, Google, Yahoo, Oracle, Palantir-technologies, Adobe, Uber, Facebook, Bloomberg\]](#2-contains-duplicate-easy-airbnb-amazon-apple-microsoft-tcs-google-yahoo-oracle-palantir-technologies-adobe-uber-facebook-bloomberg)
+    - [3 Valid Anagram \[Easy\] \[Expedia, Affirm, Docusign, Yahoo, Cisco, Servicenow, Goldman Sachs, Amazon, Microsoft, Oracle, Morgan-stanley, Uber, Spotify, Zulily, Google, Paypal, Snapchat, Apple, Goldman-sachs, Yelp, Facebook, Bloomberg\]](#3-valid-anagram-easy-expedia-affirm-docusign-yahoo-cisco-servicenow-goldman-sachs-amazon-microsoft-oracle-morgan-stanley-uber-spotify-zulily-google-paypal-snapchat-apple-goldman-sachs-yelp-facebook-bloomberg)
 
 ## Array & Hashing
 ### 1 Concatenation of Array [Easy] [Google, Adobe, Facebook]
@@ -465,7 +466,9 @@ By the definition of the anagram, we can rearrange the characters. Does the orde
 
 Hint 3
 We can just consider maintaining the frequency of each character. We can do this by having two separate hash tables for the two strings. Then, we can check whether the frequency of each character in string s is equal to that in string t and vice versa.
+
 ---
+
 **Solutions**
 - So basically if both string array have same elements despite any order , they are anagram
 - Solution 1

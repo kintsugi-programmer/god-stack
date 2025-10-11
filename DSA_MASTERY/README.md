@@ -193,19 +193,19 @@
       - [6. Function Parameter Considerations:](#6-function-parameter-considerations)
     - [Key Takeaways](#key-takeaways)
     - [Advanced Topics to Explore](#advanced-topics-to-explore)
-- [Chapter 3.3.: Introduction to Pointers](#chapter-33-introduction-to-pointers)
-  - [Definition and Motivation](#definition-and-motivation)
-  - [Memory Layout Overview](#memory-layout-overview)
-  - [Pointer Declaration, Initialization, and Dereferencing](#pointer-declaration-initialization-and-dereferencing)
-    - [1. Declaring a Pointer](#1-declaring-a-pointer)
-    - [2. Initializing a Pointer](#2-initializing-a-pointer)
-    - [3. Dereferencing a Pointer](#3-dereferencing-a-pointer)
-  - [Dynamic Memory Allocation](#dynamic-memory-allocation)
-    - [In C (using `malloc` and `free`)](#in-c-using-malloc-and-free)
-    - [In C++ (using `new` and `delete[]`)](#in-c-using-new-and-delete)
-  - [Pointers and Arrays](#pointers-and-arrays)
-  - [Pointer Size Is Uniform](#pointer-size-is-uniform)
-  - [Best Practices](#best-practices-1)
+  - [Chapter 3.3.: Introduction to Pointers](#chapter-33-introduction-to-pointers)
+    - [Definition and Motivation](#definition-and-motivation)
+    - [Memory Layout Overview](#memory-layout-overview)
+    - [Pointer Declaration, Initialization, and Dereferencing](#pointer-declaration-initialization-and-dereferencing)
+      - [1. Declaring a Pointer](#1-declaring-a-pointer)
+      - [2. Initializing a Pointer](#2-initializing-a-pointer)
+      - [3. Dereferencing a Pointer](#3-dereferencing-a-pointer)
+    - [Dynamic Memory Allocation](#dynamic-memory-allocation)
+      - [In C (using `malloc` and `free`)](#in-c-using-malloc-and-free)
+      - [In C++ (using `new` and `delete[]`)](#in-c-using-new-and-delete)
+    - [Pointers and Arrays](#pointers-and-arrays)
+    - [Pointer Size Is Uniform](#pointer-size-is-uniform)
+    - [Best Practices](#best-practices-1)
 
 # Chapter 1: Before We Start
 ## Chapter 1.1.: Data Structures Course Guide
@@ -1324,8 +1324,13 @@ Because the project template is identical, creating a C++ project merely require
 
 
 # Chapter 3: Essential C & C++ Concepts
+
+> C++ is Extended C !!!
+
 ## Chapter 3.1.: Arrays Basics
+
 ### Core Array Definition and Purpose
+
 Arrays serve as **collections of similar data elements** that allow you to group multiple values of the same data type under a single name. Instead of declaring separate variables for each piece of data, arrays provide an efficient mechanism to manage related information systematically. This fundamental concept becomes crucial when working with data structures, as arrays form the backbone of many complex data organization methods.[1][2]
 
 > Array Memory Layout of eg: int A[5];
@@ -1439,6 +1444,13 @@ The address of `A[i]` equals `Base_Address + (i × sizeof(datatype))`. With zero
 - `A[1]` address = Base_Address + (1 × 4) = Base_Address + 4
 - `A[2]` address = Base_Address + (2 × 4) = Base_Address + 8
 
+```cpp
+int A[5];
+A[0]=1;
+A[1]=2;
+A[2]=4;
+cout<<sizeof(A); // 20
+```
 This direct correlation between index and memory offset makes array access computationally efficient.[15][14]
 
 ### Array Access and Traversal Methods
@@ -1469,7 +1481,6 @@ Or in C++, use for each loop
 ```cpp
 for (int x:myNumbers){cout<<x<<endl;}
 ```
-
 
 This approach makes your code adaptable to arrays of different sizes.[17]
 
@@ -1963,15 +1974,14 @@ While not covered in this video, consider:
 
 ---
 
-*These notes provide a comprehensive understanding of structures in C programming, covering fundamental concepts through advanced memory management considerations. Use these concepts as building blocks for more complex data structure implementations.*
 
-# Chapter 3.3.: Introduction to Pointers
+## Chapter 3.3.: Introduction to Pointers
 
 **Key Takeaway:** Pointers allow a program to store and manipulate addresses of data rather than the data itself. They are essential for dynamic memory management, resource access, and efficient parameter passing.
 
 ***
 
-## Definition and Motivation
+### Definition and Motivation
 
 A **pointer** is a special variable whose value is the **address** of another variable or resource, rather than the data itself. While normal variables directly hold data (e.g., integers, characters), pointers hold the location of where that data resides in memory. By using pointers, a program can:
 
@@ -1982,7 +1992,7 @@ A **pointer** is a special variable whose value is the **address** of another va
 
 ***
 
-## Memory Layout Overview
+### Memory Layout Overview
 
 Modern programs divide **main memory** into three segments:
 
@@ -1997,9 +2007,9 @@ By default, a running program can directly access its Code and Stack segments. T
 
 ***
 
-## Pointer Declaration, Initialization, and Dereferencing
+### Pointer Declaration, Initialization, and Dereferencing
 
-### 1. Declaring a Pointer
+#### 1. Declaring a Pointer
 
 ```cpp
 int* p;
@@ -2008,7 +2018,7 @@ int* p;
 - The asterisk (`*`) in the declaration specifies that `p` is a pointer to an `int`.
 - This pointer variable itself is stored on the **stack** and consumes memory (8 bytes on modern 64-bit systems, regardless of the pointed-to type).
 
-### 2. Initializing a Pointer
+#### 2. Initializing a Pointer
 
 To make `p` hold the address of an existing integer variable:
 
@@ -2021,7 +2031,7 @@ p = &a;   // &a yields the address of 'a'
 - The address operator (`&`) retrieves the memory location of `a`.
 - **Do not** use `*` when assigning an address—only at declaration and when dereferencing.
 
-### 3. Dereferencing a Pointer
+#### 3. Dereferencing a Pointer
 
 To access the data stored at the address held by `p`:
 
@@ -2035,11 +2045,11 @@ std::cout << *p;  // prints 10
 
 ***
 
-## Dynamic Memory Allocation
+### Dynamic Memory Allocation
 
 Pointers shine when managing heap memory:
 
-### In C (using `malloc` and `free`)
+#### In C (using `malloc` and `free`)
 
 ```c
 #include <stdlib.h>
@@ -2052,7 +2062,7 @@ free(p);                                // release heap memory
 - `malloc` returns a `void*` which must be cast to the appropriate pointer type.
 - Always call `free` when done to prevent memory leaks (critical in large programs).
 
-### In C++ (using `new` and `delete[]`)
+#### In C++ (using `new` and `delete[]`)
 
 ```cpp
 int* p = new int[5];  // allocate array of 5 ints
@@ -2066,7 +2076,7 @@ delete[] p;           // release heap memory
 
 ***
 
-## Pointers and Arrays
+### Pointers and Arrays
 
 - The **name of an array** acts as a constant pointer to its first element.
 - You can assign an array to a pointer without `&`:
@@ -2080,13 +2090,13 @@ delete[] p;           // release heap memory
 
 ***
 
-## Pointer Size Is Uniform
+### Pointer Size Is Uniform
 
 On modern 64-bit systems, **all** pointers—regardless of the data type they point to—occupy **8 bytes**. This uniformity holds whether they point to `int`, `char`, `struct`, or function types.
 
 ***
 
-## Best Practices
+### Best Practices
 
 - Always **initialize** pointers before use.
 - **Dereference** only valid, non-null pointers.
