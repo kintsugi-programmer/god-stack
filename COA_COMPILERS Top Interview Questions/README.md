@@ -1,5 +1,11 @@
 # COA_COMPILERS Top Interview Questions
 
+> “C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.” — Bjarne Stroustrup
+
+- Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
+
+> Disclaimer: The content presented here is a curated blend of my personal learning journey, experiences, open-source documentation, and invaluable knowledge gained from diverse sources. I do not claim sole ownership over all the material; this is a community-driven effort to learn, share, and grow together.
+
 ## Table of Contents
 - [COA\_COMPILERS Top Interview Questions](#coa_compilers-top-interview-questions)
   - [Table of Contents](#table-of-contents)
@@ -414,3 +420,10 @@ Direct Memory Access (DMA) is a method that allows peripherals to directly trans
 ### 25. **What is Horizontal Microcode?** 
  
 Horizontal microcode specifies control signals at a very fine granularity. It provides each control signal explicitly, allowing greater flexibility and parallelism in controlling the processor’s internal components, but it requires more bits per microinstruction compared to vertical microcode.
+
+---
+End-of-File
+
+The [god-stack](https://github.com/kintsugi-programmer/god-stack) repository, authored by Kintsugi-Programmer, is less a comprehensive resource and more an Artifact of Continuous Research and Deep Inquiry into Computer Science and Software Engineering. It serves as a transparent ledger of the author's relentless pursuit of mastery, from the foundational algorithms to modern full-stack implementation.
+
+> Made with 💚 [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
