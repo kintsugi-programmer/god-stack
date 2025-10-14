@@ -9,3 +9,7 @@
     - Create super depth notes in Markdown (.md) format with 100% information preserved, no loss. Use simple grammar and keep everything clear, direct, and well-structured. using headings, subheadings,paragraphs, statements and code blocks when needed. Include every detail, definition, example, and step exactly from the source. transform the given content into clean, readable .md format.
 
 > “No, I'm not interested in developing a powerful brain. All I'm after is just a mediocre brain, something like the President of the American Telephone and Telegraph Company.” — Alan Turing​
+
+> “First learn computer science and all the theory. Next develop a programming style. Then forget all that and just hack.” — George Carrette
+
+> “There are only two ways to write error-free programs. Only the third one works.” - Reddit
