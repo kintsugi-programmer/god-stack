@@ -1,4 +1,4 @@
-# Day x/180 of The DeveloperProMax Challenge
+# 👾 Day x/180 of The DeveloperProMax Challenge
 > Coding, is Meditation
 
 - Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
@@ -24,13 +24,13 @@
 > Resources: Abdul Bari's Mastering Data Structures & Algorithms using C and C++, ChaiCode's Full Stack Web Dev Course with 100xDev's Cohort 3.0, NeetCode 250 DSA Sheet, and Research Docs &YT for Core CS , keeping focus on Revision, Health, Fitness & bit Gaming.
 
 ---
+# DSA_LEETCODE
+---
 # DSA_MASTERY
 ---
 # FULLSTACK_WEBDEV
 ---
 # CN
----
-# DSA_LEETCODE
 ---
 # OTHERS
 ---

@@ -8,6 +8,54 @@
 ## Table of Contents
 - [CN](#cn)
   - [Table of Contents](#table-of-contents)
+- [Computer Networks World | in NutShell](#computer-networks-world--in-nutshell)
+  - [Computer Networks Fundamentals and Context](#computer-networks-fundamentals-and-context)
+    - [Introduction and Subject Scope](#introduction-and-subject-scope)
+    - [Transition from Operating Systems (OS)](#transition-from-operating-systems-os)
+    - [The Need for the Internet](#the-need-for-the-internet)
+  - [Client-Server Model and Basic Flow](#client-server-model-and-basic-flow)
+    - [Defining Client and Server](#defining-client-and-server)
+    - [Protocols and Data Packets](#protocols-and-data-packets)
+    - [Basic Request/Response Flow (HTTP)](#basic-requestresponse-flow-http)
+  - [Addressing Systems](#addressing-systems)
+    - [The Need for Addressing](#the-need-for-addressing)
+    - [**IP Addresses (Computer Identification)**](#ip-addresses-computer-identification)
+    - [**Ports (Application Identification)**](#ports-application-identification)
+    - [DNS (Domain Name System)](#dns-domain-name-system)
+      - [DNS Resolution Process](#dns-resolution-process)
+      - [Caching Mechanisms](#caching-mechanisms)
+      - [Hierarchical Structure](#hierarchical-structure)
+      - [Name Records](#name-records)
+  - [High-Level Internet Picture](#high-level-internet-picture)
+    - [Infrastructure Components](#infrastructure-components)
+    - [Cloud Computing](#cloud-computing)
+  - [Web Development Basics (Front-end \& Back-end)](#web-development-basics-front-end--back-end)
+    - [Core Front-end Languages](#core-front-end-languages)
+      - [Types of HTML](#types-of-html)
+    - [Rendering Strategies](#rendering-strategies)
+    - [Abstraction in Development (Frameworks)](#abstraction-in-development-frameworks)
+    - [API Calls and Routing](#api-calls-and-routing)
+  - [The Network Stack (OSI \& TCP/IP Models)](#the-network-stack-osi--tcpip-models)
+    - [Introduction to the Stack](#introduction-to-the-stack)
+    - [Layered Architecture](#layered-architecture)
+    - [Encapsulation Process (Adding Headers)](#encapsulation-process-adding-headers)
+    - [Layer Functionalities](#layer-functionalities)
+  - [Detailed Data Packet Transfer Simulation (Hop-to-Hop)](#detailed-data-packet-transfer-simulation-hop-to-hop)
+    - [Network Hops](#network-hops)
+    - [Key Network Components](#key-network-components)
+    - [Addressing Mechanisms (IP vs. MAC Address)](#addressing-mechanisms-ip-vs-mac-address)
+    - [Core Tables Maintained](#core-tables-maintained)
+    - [Simulation Steps (Detailed Breakdown)](#simulation-steps-detailed-breakdown)
+      - [Phase 1: Addressing Resolution via ARP](#phase-1-addressing-resolution-via-arp)
+      - [Phase 2: Data Transfer to the Gateway](#phase-2-data-transfer-to-the-gateway)
+      - [Phase 3: Data Transfer to the Server (Across Router)](#phase-3-data-transfer-to-the-server-across-router)
+  - [Key Network Concepts and Interview Topics](#key-network-concepts-and-interview-topics)
+    - [Data Transfer Delivery Types](#data-transfer-delivery-types)
+    - [Firewall](#firewall)
+    - [Proxy Servers](#proxy-servers)
+    - [VPN (Virtual Private Network) vs. Proxy](#vpn-virtual-private-network-vs-proxy)
+    - [Generational Wireless Networks (3G, 4G, 5G)](#generational-wireless-networks-3g-4g-5g)
+    - [Other Common Interview Questions](#other-common-interview-questions)
 - [Chapter 1: Introduction to Computer Network](#chapter-1-introduction-to-computer-network)
   - [Chapter 1.1.: Introduction: Computer Networks and Basic Terminologies](#chapter-11-introduction-computer-networks-and-basic-terminologies)
     - [Computer Networks and its Features](#computer-networks-and-its-features)
@@ -15,6 +63,7 @@
     - [Computer Network Components](#computer-network-components)
   - [Chapter 1.2.: Layering \& Protocols (OSI Model and Its 7 Layers)](#chapter-12-layering--protocols-osi-model-and-its-7-layers)
     - [Introduction to the OSI Model](#introduction-to-the-osi-model)
+      - [Principles used to arrive at the Seven Layers:](#principles-used-to-arrive-at-the-seven-layers)
     - [7 Layers of the OSI Model](#7-layers-of-the-osi-model)
       - [1. Physical Layer (Layer 1)](#1-physical-layer-layer-1)
       - [2. Data Link Layer (Layer 2)](#2-data-link-layer-layer-2)
@@ -114,7 +163,7 @@
     - [Hypertext Transfer Protocol (HTTP)](#hypertext-transfer-protocol-http)
     - [Simple Mail Transfer Protocol (SMTP)](#simple-mail-transfer-protocol-smtp)
     - [File Transfer Protocol (FTP)](#file-transfer-protocol-ftp)
-    - [DNS (Domain Name System)](#dns-domain-name-system)
+    - [DNS (Domain Name System)](#dns-domain-name-system-1)
   - [Chapter 5.4.: Transport Layer \& Its Protocols](#chapter-54-transport-layer--its-protocols)
     - [Definition](#definition-1)
     - [Key Functions](#key-functions)
@@ -170,29 +219,14 @@
       - [Follow-up Questions:](#follow-up-questions-6)
     - [8. What is the purpose of DNS?](#8-what-is-the-purpose-of-dns)
       - [Follow-up Questions:](#follow-up-questions-7)
-- [More](#more)
-  - [1. Computer Networks Overview](#1-computer-networks-overview)
-  - [2. Network Topology](#2-network-topology)
-    - [Types of Network Topology](#types-of-network-topology)
-      - [A. Star Topology](#a-star-topology)
-      - [B. Ring Topology](#b-ring-topology)
-      - [C. Bus Topology](#c-bus-topology)
-      - [D. Mesh Topology](#d-mesh-topology)
-      - [E. Tree Topology](#e-tree-topology)
-      - [F. Hybrid Topology](#f-hybrid-topology)
-  - [3. Different Types of Networks](#3-different-types-of-networks)
-    - [Virtual Private Network (VPN)](#virtual-private-network-vpn)
-      - [Advantages of VPN](#advantages-of-vpn)
-      - [Types of VPN](#types-of-vpn)
-  - [4. Addressing and Network Models](#4-addressing-and-network-models)
+  - [Virtual Private Network (VPN)](#virtual-private-network-vpn)
+    - [Advantages of VPN](#advantages-of-vpn)
+    - [Types of VPN](#types-of-vpn)
+  - [Addressing and Network Models](#addressing-and-network-models)
     - [IPv4 Address](#ipv4-address-1)
-    - [OSI (Open System Interconnections) Model](#osi-open-system-interconnections-model)
-      - [Principles used to arrive at the Seven Layers:](#principles-used-to-arrive-at-the-seven-layers)
-      - [Seven Layers of the OSI Model](#seven-layers-of-the-osi-model)
-    - [TCP/IP Reference Model](#tcpip-reference-model)
-  - [5. Key Protocols and Differences](#5-key-protocols-and-differences)
+  - [Key Protocols and Differences](#key-protocols-and-differences)
     - [HTTP and HTTPS](#http-and-https)
-    - [DNS (Domain Name System)](#dns-domain-name-system-1)
+    - [DNS (Domain Name System)](#dns-domain-name-system-2)
       - [Working of DNS](#working-of-dns)
       - [DNS Forwarder](#dns-forwarder)
     - [SMTP Protocol (Simple Mail Transfer Protocol)](#smtp-protocol-simple-mail-transfer-protocol)
@@ -200,9 +234,9 @@
     - [Protocol Elements](#protocol-elements)
     - [Important Protocols (Other)](#important-protocols-other)
     - [MAC address and IP address](#mac-address-and-ip-address)
-  - [6. Commands, Devices, and Network Concepts](#6-commands-devices-and-network-concepts)
+  - [Commands, Devices, and Network Concepts](#commands-devices-and-network-concepts)
     - [Configuration Commands](#configuration-commands)
-    - [Firewall](#firewall)
+    - [Firewall](#firewall-1)
     - [Core Network Flow: What happens when you enter google.com](#core-network-flow-what-happens-when-you-enter-googlecom)
     - [Hub and Switch](#hub-and-switch)
     - [Subnetting](#subnetting)
@@ -218,54 +252,433 @@
     - [Utilities](#utilities)
     - [Peer-to-Peer Processes (P2P)](#peer-to-peer-processes-p2p)
     - [Communication Types](#communication-types)
-- [Computer Networks World](#computer-networks-world)
-  - [Computer Networks Fundamentals and Context](#computer-networks-fundamentals-and-context)
-    - [Introduction and Subject Scope](#introduction-and-subject-scope)
-    - [Transition from Operating Systems (OS)](#transition-from-operating-systems-os)
-    - [The Need for the Internet](#the-need-for-the-internet)
-  - [Client-Server Model and Basic Flow](#client-server-model-and-basic-flow)
-    - [Defining Client and Server](#defining-client-and-server)
-    - [Protocols and Data Packets](#protocols-and-data-packets)
-    - [Basic Request/Response Flow (HTTP)](#basic-requestresponse-flow-http)
-  - [Addressing Systems](#addressing-systems)
-    - [The Need for Addressing](#the-need-for-addressing)
-    - [IP Addresses (Computer Identification)](#ip-addresses-computer-identification)
-    - [Ports (Application Identification)](#ports-application-identification)
-    - [DNS (Domain Name System)](#dns-domain-name-system-2)
-      - [DNS Resolution Process](#dns-resolution-process)
-      - [Caching Mechanisms](#caching-mechanisms)
-      - [Hierarchical Structure](#hierarchical-structure)
-      - [Name Records](#name-records)
-  - [High-Level Internet Picture](#high-level-internet-picture)
-    - [Infrastructure Components](#infrastructure-components)
-    - [Cloud Computing Definition](#cloud-computing-definition)
-  - [Web Development Basics (Front-end \& Back-end)](#web-development-basics-front-end--back-end)
-    - [Core Front-end Languages](#core-front-end-languages)
-      - [Types of HTML](#types-of-html)
-    - [Rendering Strategies](#rendering-strategies)
-    - [Abstraction in Development (Frameworks)](#abstraction-in-development-frameworks)
-    - [API Calls and Routing](#api-calls-and-routing)
-  - [The Network Stack (OSI \& TCP/IP Models)](#the-network-stack-osi--tcpip-models)
-    - [Introduction to the Stack](#introduction-to-the-stack)
-    - [Layered Architecture](#layered-architecture)
-    - [Encapsulation Process (Adding Headers)](#encapsulation-process-adding-headers)
-    - [Layer Functionalities](#layer-functionalities)
-  - [Detailed Data Packet Transfer Simulation (Hop-to-Hop)](#detailed-data-packet-transfer-simulation-hop-to-hop)
-    - [Network Hops](#network-hops)
-    - [Key Network Components](#key-network-components)
-    - [Addressing Mechanisms (IP vs. MAC Address)](#addressing-mechanisms-ip-vs-mac-address)
-    - [Core Tables Maintained](#core-tables-maintained)
-    - [Simulation Steps (Detailed Breakdown)](#simulation-steps-detailed-breakdown)
-      - [Phase 1: Addressing Resolution via ARP](#phase-1-addressing-resolution-via-arp)
-      - [Phase 2: Data Transfer to the Gateway](#phase-2-data-transfer-to-the-gateway)
-      - [Phase 3: Data Transfer to the Server (Across Router)](#phase-3-data-transfer-to-the-server-across-router)
-  - [Key Network Concepts and Interview Topics](#key-network-concepts-and-interview-topics)
-    - [Data Transfer Delivery Types](#data-transfer-delivery-types)
-    - [Firewall](#firewall-1)
-    - [Proxy Servers](#proxy-servers)
-    - [VPN (Virtual Private Network) vs. Proxy](#vpn-virtual-private-network-vs-proxy)
-    - [Generational Wireless Networks (3G, 4G, 5G)](#generational-wireless-networks-3g-4g-5g)
-    - [Other Common Interview Questions](#other-common-interview-questions)
+
+
+# Computer Networks World | in NutShell
+
+## Computer Networks Fundamentals and Context
+
+### Introduction and Subject Scope
+
+**Computer Networks** is considered a lighter subject compared to Operating Systems (OS). There are only a few fundamental things that need to be known, and understanding these will allow most questions to be answered.
+
+Networks are more important than subjects like Compilers or Computer Organization and Architecture (COA) because networks are essentially the **backbone of the internet today**.
+
+Key topics covered include:
+*   The network stack.
+*   How actual data transfers happen hop-to-hop.
+*   Understanding the ARP protocol, routing tables, MAC address tables, and how sender/receiver tables are populated.
+*   How data packets travel and how headers are changed.
+
+### Transition from Operating Systems (OS)
+
+Previously, `OS` was discussed as sitting on the computer and` working as a program manager`. OS manages everything, including:
+*   How processes and functions interact.
+*   How code gets executed and reaches the core.
+*   Managing memory and writing things to disk.
+
+The understanding built around `OS was that it handles everything internally within the computer`.
+
+### The Need for the Internet
+
+People desired more features and wanted to create **the Internet**, allowing computers and things on the globe to connect.
+
+The requirement was to run programs on *some other computer* and receive the results in one's own browser, rather than just running programs compiled and executed on the same computer. This requirement led to the development of ideas on how to support these connections.
+![alt text](image-2.png)
+Key questions that arose included:
+1.  How does the data travel across the network?
+2.  How to design independent pieces of software (like Chrome browser or server software).
+
+A common interview question is: **"How does the Internet work?"** or specific details like, **"When you type google.com, how is that served?"**.
+
+## Client-Server Model and Basic Flow
+![alt text](image-3.png)
+### Defining Client and Server
+
+**Client** 
+- A computer or entity 
+- where the browser is running, 
+- which 
+  - **raises a request to view a page**
+  - & **receives the result**.
+
+*   Generally, **anything that starts the process** is the client.
+*   The client requests a resource or data.
+
+A **Server processes the request sends a response**.
+*   A **Web Server** specifically processes HTTP/HTTPS requests received over the internet.
+*   Servers can exist for other contexts as well.
+
+### Protocols and Data Packets
+
+People defined certain **Protocols**.
+*   A `protocol is like a language needed to communicate`.
+*   Protocols are a fixed set of rules.
+
+What is sent on the internet is called **Data Packets**.
+*   Anything traveling on the internet is called a data packet.
+
+An example of a protocol is **HTTP** (Hypertext Transfer Protocol). When a user types a URL (e.g., `www.google.com`), an HTTP request is made following the protocol and sent onto the internet.
+
+### Basic Request/Response Flow (HTTP)
+![alt text](image-4.png)
+1.  The client types a URL (e.g., `www.google.com`).
+2.  The client sends an **HTTP request** onto the Internet.
+3.  The request travels to the server where the backend/server code resides.
+4.  The server reads the HTTP request, processes it, and generates an **HTTP response**.
+5.  The HTTP response travels back across the Internet.
+6.  The client's browser receives the data and displays it on the web page.
+![alt text](image-5.png)
+The fundamental challenge in this flow is **how the data travels magically across the internet**.
+
+## Addressing Systems
+
+### The Need for Addressing
+
+Since many computers and web servers (which are also just computers running specific software) are connected to the Internet, a way to know where to send the data is required.
+
+Just like ordering food requires an address for pickup (restaurant) and delivery (user), **some sort of addressing system must be built**.
+![alt text](image-6.png)
+### **IP Addresses (Computer Identification)**
+
+The required address is known as the **IP Address** (Internet Protocol Address).
+
+Every computer on the internet has an IP Address.
+*   Example format: `192.168.1.1`.
+*   **IPv4** (Fourth Version of IP) uses numbers separated by dots, generally using 256 numbers possible for each segment.
+
+If a computer's IP address is known, one can type it into the browser to reach that address (e.g., trying to open `8.8.8.8` which is Google’s Public DNS https://dns.google/ ).
+![alt text](image-7.png)
+### **Ports (Application Identification)**
+
+There is a need for a **two-phase addressing system**:
+1.  Which computer should the response go to (IP Address).
+2.  Inside that computer, which application/window should receive the response (Port).
+
+Different applications run on different ports within a computer.
+*   Example: A web server might be hosted at a specific IP address and a specific port.
+*   **HTTP** by default uses port **80**. Web servers typically open at port 80.
+
+### DNS (Domain Name System)
+
+IP addresses are not fixed, or if they are fixed, knowing a new computer's IP address is difficult. People built simpler systems to help identify resources.
+
+People rely on **Domain Names** (e.g., `google.com`).
+
+![alt text](image.png)
+
+#### DNS Resolution Process
+DNS acts like a **phone book system**.
+*   It is a **function that takes a domain name and converts it to its corresponding IP address**.
+*   This process is necessary because **IP addresses can change dynamically**.
+
+When a request is made:
+1.  The request first goes to the **DNS Resolver**, usually owned by the Internet Service Provider (ISP).
+2.  The DNS Resolver checks its **cache**.
+![alt text](image-8.png)
+#### Caching Mechanisms
+*   The DNS Resolver has its own cache to save recently resolved domain names.
+*   A **TTL** (Time To Live) defines how long a record stays in the cache. If the same domain (e.g., `example.com`) is asked repeatedly within the TTL, the cached result is returned directly.
+*   Caching is implemented at every level (user application, PC, DNS Resolver).
+*   When space limits caching, the **LRU (Least Recently Used)** eviction policy is typically used.
+
+#### Hierarchical Structure
+If a domain (e.g., `www.example.com`) is new and not in the cache, the DNS Resolver uses a hierarchical structure:
+1.  It asks the **DNS Root Name Server** for the Name Server of the Top-Level Domain (TLD), e.g., `.com`.
+2.  The Root Server returns the Name Server for the TLD.
+3.  The Resolver then asks the TLD Name Server (e.g., the `.com` Name Server) for the name server managing `example.com`.
+4.  The TLD Name Server returns the IP address of the **Authoritative Name Server** (often hosted by services like AWS Route 53 or GoDaddy) that knows the final IP address.
+5.  The hosting service (e.g., GoDaddy) registers the domain with the TLD name server.
+
+#### Name Records
+DNS involves specific record types, such as:
+*   **A Records** (Address Records).
+*   **C Name Records** (Canonical Name Records).
+*   *Note: Detailed understanding of DNS records is often not required in general interviews*.
+
+If multiple IP addresses are returned for a domain (e.g., two addresses for a website), generally any one can be connected to.
+
+## High-Level Internet Picture
+
+The "Internet" symbol (the globe) is often the **biggest piece of illusion** for developers, as the actual data travel path is complex.
+![alt text](image-9.png)
+### Infrastructure Components
+
+When a request is sent, the flow includes:
+1.  **DNS resolution** (Root Name Server, TLD, etc.).
+2.  An **HTTP request** is made.
+3.  **TCP/IP magic** happens.
+4.  The request goes through **Load Balancers**.
+5.  The request reaches **Application Servers**.
+6.  The response travels back.
+
+All these pieces (Load Balancers, Firewalls, Servers) are built using either hardware or software, and all can be coded. Algorithms are used, for example, in Load Balancer code.
+
+![alt text](image-1.png)
+
+### Cloud Computing
+
+**Cloud computing** provides ready-made templates for infrastructure pieces (like small computers/servers).
+*   Users do not need to host their own computers or servers.
+*   The cloud provider provides the hardware at a remote location.
+*   The user only needs to write the software inside it.
+
+## Web Development Basics (Front-end & Back-end)
+
+Web development involves writing code that runs on two primary locations:
+
+1.  **Front-end:** The piece of software that runs on your browser (e.g., Chrome).
+2.  **Back-end:** The piece of software that runs on the web server.
+
+### Core Front-end Languages
+
+To display content on a browser, developers must generally learn three famous languages:
+
+| Language | Full Form | Purpose |
+| :--- | :--- | :--- |
+| **HTML** | HyperText Markup Language | Used to create the **skeletal structure** or markup. Tells the browser what to put in the head, body, etc.. |
+| **CSS** | Cascading Style Sheets | Used for styling, such as defining colors, background colors, height, and width. |
+| **JavaScript** | | Used to define interactions (e.g., what happens when clicked, making things pop up or disappear). JS can change the HTML structure, known as the **DOM (Document Object Model)**. |
+
+#### Types of HTML
+1.  **Non-semantic HTML:** Uses general tags like `div` for nesting and structure without conveying meaning.
+2.  **Semantic HTML:** Uses specific names like `header`, `nav`, or `aside`. These have special purposes and are picked up by automated scrapers/bots, which helps with SEO (Search Engine Optimization) and ranking pages.
+
+When a web server receives a request for a website, it sends all three components: HTML, CSS, and JavaScript.
+
+### Rendering Strategies
+
+When HTML is fetched, it is initially a basic skeleton (`index.html`). Then CSS is requested to style it, and JavaScript is run to handle interactions. Frameworks and libraries (like Angular and React) help developers avoid writing repetitive HTML/CSS code.
+
+Two rendering strategies exist:
+
+1.  **Client-Side Rendering (CSR):**
+    *   The server sends the HTML file and JavaScript.
+    *   The HTML is initially ugly or incomplete.
+    *   The JavaScript downloads and runs on the browser (client), calling other APIs or fetching data to build the rest of the page.
+    *   The page is not fully formed or visible until the JavaScript runs. React is a framework that primarily uses CSR.
+
+2.  **Server-Side Rendering (SSR):**
+    *   The server sends a **ready-to-render HTML** page.
+    *   The HTML loads instantly on the page.
+    *   JavaScript arrives later to handle interaction and functionality.
+    *   SSR helps with SEO because the content loads immediately. Next.js became popular because it explicitly provided methods for SSR.
+
+### Abstraction in Development (Frameworks)
+
+Frameworks simplify development by providing pre-packaged functionality.
+
+*   **Front-end frameworks:** React, Angular.
+*   **Back-end frameworks:** Express (Node/JavaScript), Ruby on Rails, Django (Python).
+
+Frameworks are used to prevent writing the same code repeatedly. Stacks (e.g., MERN, MEAN) are created so that companies can find mass-trained engineers compatible with their existing codebases.
+
+### API Calls and Routing
+
+In web development, code often uses wrapper functions to request data.
+**Example React code:**
+```javascript
+fetch("/api/data") 
+// When the app loads, it fetches /api/data.
+// When response comes, it uses data to build the page. 
+```
+*   `/api/data` is called a **route**.
+*   The code makes an API call to the server using this route.
+
+The framework provides a massive abstraction layer:
+1.  **Front-end:** A simple `fetch` request is sent. The framework handles creating the HTTP request, encrypting it, sending it over the internet, and retrieving the response.
+2.  **Back-end:** The server code is set up to detect when a specific route (e.g., `/api/data`) is called. If the request matches the route, a corresponding function runs, and the server generates and sends an HTTP response (e.g., a JSON response).
+
+This abstraction simplifies the process, hiding the complexities of network connections and kernel handling. Specialized engineers (e.g., those in High-Frequency Trading or working for companies like Cisco) often work on optimizing the internals of this stack to reduce latency (e.g., bypassing the kernel and writing their own network stack).
+
+## The Network Stack (OSI & TCP/IP Models)
+
+The complexity of data transfer across the network is handled by the Network Stack. This stack is supported by network engineers.
+
+### Introduction to the Stack
+
+The stack acts as a magical pipe where a data input (e.g., an HTTP packet) is inserted on one end and the exact same data must be output on the other end.
+
+The purpose of the layered approach is similar to OS: breaking the complex problem into parts so that different people can work on independent software/hardware pieces.
+
+### Layered Architecture
+
+The standard model is the **OSI Model**, consisting of seven layers:
+
+1.  Application Layer
+2.  Presentation Layer
+3.  Session Layer
+4.  Transport Layer
+5.  Network Layer
+6.  Data Link Layer
+7.  Physical Layer
+
+The **TCP/IP Model** combines the first three (Application, Presentation, Session) into a single **Application Layer**.
+
+### Encapsulation Process (Adding Headers)
+
+As data moves down the stack, each layer encapsulates the data received from the layer above by adding its own control information in the form of a **header**.
+
+1.  The Application Layer generates the HTTP data/packet.
+2.  The Transport Layer takes this HTTP packet and adds its own header.
+3.  The Network Layer takes the resultant data and adds its own header.
+4.  The Data Link Layer takes the resultant data and adds its own header.
+
+Headers are added to support the specific function that the corresponding layer needs to perform.
+
+### Layer Functionalities
+
+The network stack is present on every computer, router, and device connected to the internet.
+
+| Layer | Function/Role | Details |
+| :--- | :--- | :--- |
+| **Application Layer** | Generates the HTTP packet. | This is where the application (e.g., React) runs. |
+| **Presentation Layer** | Handles data format and encoding. | Determines the language the data is written in (e.g., JSON, encoding type, compression/zipping). Handles optimization/sizing. |
+| **Session Layer** | Manages sessions between two end-to-end applications. | Handles credentials, checks progress (checkpoints), and aids in resuming data transfer if data is arriving in parts (synchronization). |
+| **Transport Layer** | **End-to-End Guaranteed Delivery**. | Takes data from the application layer and ensures it reaches the transport layer of the destination computer. |
+| **Network Layer (L3)** | **Best-effort routing** from computer to computer. | Uses IP addresses (Source IP, Destination IP) to determine the route. No guarantee of delivery; packets may drop. |
+| **Data Link Layer (L2)** | **Hop-to-Hop delivery**. | Manages data transfer within a single network segment (from one computer/switch to the next router/hop). Handles collision detection (`CSMA CD`) and traffic framing. |
+| **Physical Layer** | Transfers raw **0s and 1s** across the medium (wire/hardware). | This layer is purely hardware. |
+
+**Transport Layer Details:**
+*   It works at a **Port-to-Port Level** (Source Port to Destination Port).
+*   It uses **Sequence Numbers** to ensure that data pieces (segments) are synchronized and can be reassembled correctly at the destination.
+*   It uses **Acknowledgement Numbers**.
+*   It handles congestion control and uses the Network Layer as a wrapper/API. If the Network Layer drops a packet, the Transport Layer manages re-sending it.
+
+**Decapsulation (Data Arrival):**
+When a data packet arrives at the destination, the process reverses:
+1.  The outermost header (L2) is checked. If the MAC address matches, L2 is stripped off.
+2.  The L3 (IP) header is checked. If the Destination IP matches, L3 is stripped off.
+3.  The Transport (L4) header is checked (Port number). L4 is stripped off, and the data is passed to the correct application running on that port.
+4.  The application code (e.g., Python/Node) receives the raw data and the HTTP headers (e.g., the route requested) to process it.
+
+## Detailed Data Packet Transfer Simulation (Hop-to-Hop)
+
+When a packet travels across the internet, it moves between various network devices.
+
+### Network Hops
+
+*   The data starts at the client, passes down the full stack, and goes to the Physical Layer.
+*   It travels to the next device, typically a **Router**.
+*   The Router decodes the packet up to the Network Layer (L3).
+*   The Router checks the Destination IP Address. If the packet is not intended for the Router, the Router looks at its routing tables to see where to forward it.
+*   The Network Layer headers are opened repeatedly at every hop (Router) to determine the next destination.
+*   The Transport Layer headers are only opened at the final destination server to handle reassembly and application delivery.
+
+### Key Network Components
+
+1.  **Switches:** Generally take data from one place and send it to everyone else in their local network (dumb machine).
+2.  **Routers (Gateways):** Smartly connect one entire connection (network) to another connection. A **Getway Router** handles conversion between two potentially large, distinct networks. Routers are powerful, capable of changing L3 data (network layer).
+
+### Addressing Mechanisms (IP vs. MAC Address)
+
+| Address Type | Description | Layer | Flexibility |
+| :--- | :--- | :--- | :--- |
+| **IP Address** | Logical address (e.g., `192.168.x.x`). | Network Layer (L3). | Can change (e.g., when disconnecting/reconnecting a device, DHCP allocates a new one). |
+| **MAC Address** | Physical address of a network chip/hardware. | Data Link Layer (L2). | Fixed at the time of manufacturing; cannot be changed. |
+
+IP addresses are allocated hierarchically (e.g., a router allocates a common network portion, and unique addresses for connected devices). **DHCP (Dynamic Host Configuration Protocol)** is the protocol used to allocate IP addresses dynamically.
+
+### Core Tables Maintained
+
+Three critical tables are maintained for data transfer:
+
+1.  **ARP Table (Address Resolution Protocol Table):** Maps an IP address to a corresponding MAC address. Every computer (sender/receiver) maintains its own ARP table.
+2.  **MAC Address Table (Switching Table):** Maintained by Switches. Records which MAC address is connected to which physical port on the switch (e.g., Port 1, Port 2).
+3.  **Routing Table:** Maintained by Routers. Defines routing rules based on IP address prefixes (which side/interface handles which IP range).
+
+### Simulation Steps (Detailed Breakdown)
+
+Scenario: A client (`192.168.3.10`) needs to send data to a Server (`192.168.4.142`). The client is connected to a Switch, which connects to a Gateway Router (`.3.1`), which connects to the wider network.
+
+#### Phase 1: Addressing Resolution via ARP
+
+1.  **Packet Generation (L4 & L3):** The client's transport layer adds L4 (TCP) headers (Source Port, Destination Port, Sequence Number). The network layer adds L3 headers (Source IP: `.3.10`, Destination IP: `.4.142`).
+2.  **Destination Check:** The client sees that the Destination IP (`.4.142`) is **not** in its local network (based on prefix). The packet must be sent to the **Gateway**.
+3.  **Identifying Gateway IP:** The client knows its Gateway is usually `.1` (e.g., `192.168.3.1`).
+4.  **ARP Request:** The client needs the MAC address of the Gateway (`.3.1`). It sends an **ARP Request** over the connected wire.
+5.  **Switch Learning:** When the ARP Request reaches the Switch, the Switch records the sender's MAC address (e.g., `AAA`) and the port it arrived on (e.g., Port 1) in its MAC Address Table.
+6.  **Broadcast:** The Switch forwards (broadcasts) the ARP Request to all connected devices.
+7.  **Router Response:** The Router receives the ARP Request for `.3.1`.
+    *   The Router first saves the sender's IP/MAC address mapping (`.3.10` / `AAA`) in its own ARP Table.
+    *   The Router generates an **ARP Response**, providing its MAC address.
+8.  **Targeted Delivery:** The Router sends the ARP Response back to the client. The Switch checks its MAC Address Table, sees that the destination MAC (`AAA`) is on Port 1, and sends the response only to the client.
+9.  **Client Learning:** The client receives the ARP Response and saves the Gateway's IP/MAC address mapping in its ARP Table.
+
+#### Phase 2: Data Transfer to the Gateway
+
+1.  **L2 Encapsulation:** Since the client now knows the Gateway's MAC address, it prepares the L2 (Data Link Layer) header.
+    *   Source MAC Address: Client's MAC (`AAA`).
+    *   Destination MAC Address: Gateway's MAC (`FFF`).
+2.  **Forwarding:** The client sends the full L2-L3-L4 packet to the Switch.
+3.  **Switch Delivery:** The Switch sees the Destination MAC (`FFF`), looks up its MAC Address Table, and forwards the packet only to the Router's port (e.g., Port 3).
+4.  **Decapsulation at Router:** The Router receives the packet, sees its MAC address matches, and **removes the L2 header**.
+5.  **L3 Check:** The Router now sees the L3 header (Destination IP: `.4.142`). The Router determines this destination is on its "other side" (or via another network path).
+
+#### Phase 3: Data Transfer to the Server (Across Router)
+
+The Router follows a similar ARP process to find the MAC address of the final destination Server (`.4.142`) within the next segment.
+
+1.  The Router generates a new ARP Request for `.4.142`.
+2.  The Switch handles the request/response, populating its table with the Server's MAC address (e.g., `CCC`).
+3.  The Router receives the Server's MAC address and updates its ARP table.
+4.  The Router encapsulates the packet again with a new L2 header:
+    *   Source MAC Address: Router's exit interface MAC.
+    *   Destination MAC Address: Server's MAC (`CCC`).
+5.  **Final Delivery:** The packet is forwarded to the Switch. The Switch uses its MAC Address Table to send the packet directly to the Server's port.
+6.  **Final Decapsulation:** The Server receives the packet, validates the L2 and L3 headers, strips them off, and passes the L4 data up to the application.
+
+This entire process occurs in seconds. When the server sends a response, the process repeats, but is often much faster because the MAC/ARP tables are already populated.
+
+## Key Network Concepts and Interview Topics
+
+### Data Transfer Delivery Types
+
+| Term | Corresponding Layer | Description |
+| :--- | :--- | :--- |
+| **Guaranteed Delivery** | Transport Layer | Ensures the complete data packet reaches the destination end-to-end. |
+| **Computer to Computer** | Network Layer | Best effort to route packet segments between two computers. |
+| **Hop to Hop** | Data Link Layer | Ensures data reaches the next sequential point (e.g., from computer to first router). |
+
+### Firewall
+
+A Firewall monitors all incoming data packets.
+*   It looks for malicious content.
+*   It performs **packet filtering**.
+*   It can block traffic at the port level, IP level, or content level.
+*   Firewalls are often implemented in corporate networks.
+
+### Proxy Servers
+
+A Proxy Server acts as an intermediary.
+
+| Type | Function | Use Case |
+| :--- | :--- | :--- |
+| **Forward Proxy** | Sits in front of the client (user/institution). Takes client requests, packages them, and sends them forward. | Institution Access Control: Blocks access to specific sites. Identity Protection: Hides the client's original IP address from the internet. |
+| **Reverse Proxy** | Sits in front of the server. Takes incoming requests before they reach the actual server. | Security: Protects against DoS attacks by dropping excessive packets from a single source. Caching: Serves cached responses for repeated requests. Service Routing: Directs requests to the correct internal service. |
+
+Reverse Proxies can be categorized by the layer of data they inspect:
+*   **L4 Proxies:** Only see data up to the Transport Layer.
+*   **L7 Proxies:** Can see Application Layer data (HTTP headers/content), allowing for better blocking mechanisms. Nginx is a well-known Reverse Proxy software.
+
+### VPN (Virtual Private Network) vs. Proxy
+
+*   **Proxy:** Acts as a replacement/shield. Data still travels over the internet to reach the proxy server, which then raises the request.
+*   **VPN:** Provides a higher level of protection by creating a secure, **encrypted pipe** between the user's computer and the VPN server (which acts as the exit point/proxy).
+    *   VPN software works at the software level on the computer.
+    *   It **encrypts the packets** (including the HTTP request) so that the router or ISP cannot read the data being requested.
+    *   It uses **cryptography** and ensures an **end-to-end connection** that bypasses common internet scrutiny.
+
+### Generational Wireless Networks (3G, 4G, 5G)
+
+The main difference between 3G, 4G, and 5G is the **frequency bands** they operate on. Higher generations generally use higher frequency bands, allowing for faster speeds.
+
+### Other Common Interview Questions
+
+*   **TCP vs. UDP:** Need to know the difference and details of each protocol.
+*   **Topology:** Questions about how wires are connected (e.g., point-to-point, bus, ring topologies) and their benefits.
+*   **Types of Delays** (though considered less important).
 
 
 # Chapter 1: Introduction to Computer Network
@@ -320,10 +733,17 @@ Several hardware devices and components are involved in creating and maintaining
 7. **Modem:**  
    - **Function:** A modem (modulator-demodulator) is used to convert digital signals from a computer into analog signals for transmission over telephone lines and vice versa.  
    - **Role:** Modems allow computers and other devices to access the internet over a telephone line or cable network.
+
 ## Chapter 1.2.: Layering & Protocols (OSI Model and Its 7 Layers)
 
 ### Introduction to the OSI Model  
 The Open Systems Interconnection (OSI) model is a conceptual framework that standardizes the functions of a communication system into seven distinct layers. It helps different networking protocols to work together and ensures interoperability between various network technologies.
+
+#### Principles used to arrive at the Seven Layers:
+
+1.  Create a new layer if a different abstraction is needed.
+2.  Each layer should have a well-defined function.
+3.  The function of each layer is chosen based on internationally standardized protocols.
 
 ***
 
@@ -333,6 +753,12 @@ The Open Systems Interconnection (OSI) model is a conceptual framework that stan
 **Function:** This layer is responsible for the physical connection between devices, such as cables, switches, and other hardware. It handles the transmission of raw data bits (0s and 1s) over the network.  
 **Examples:** Ethernet cables, hubs, repeaters.
 
+*   It is the lowest layer of the OSI reference model.
+*   It is used for the transmission of an unstructured raw bit stream over a physical medium.
+*   The physical layer transmits the data either in the form of electrical/optical or mechanical form.
+*   The physical layer is mainly used for the physical connection between the devices.
+*   Physical connection can be made using twisted-pair cable, fibre-optic, or wireless transmission media.
+
 #### 2. Data Link Layer (Layer 2)  
 **Function:** The data link layer handles node-to-node data transfer and error detection. It packages raw bits into frames for transmission.  
 **Sub-layers:**  
@@ -340,9 +766,31 @@ The Open Systems Interconnection (OSI) model is a conceptual framework that stan
 - **LLC (Logical Link Control):** Manages frame synchronization and error checking.  
 **Examples:** Switches, network interface cards (NIC).
 
+*   It is used for transferring the data from one node to another node.
+*   It receives the data from the network layer and converts the data into **data frames**.
+*   It then attaches the physical address to these frames, which are sent to the physical layer.
+*   It enables the **error-free transfer of data** from one node to another node.
+
+**Functions of Data Link Layer:**
+*   **Frame synchronization:** Converts data into frames and ensures that the destination must recognize the starting and ending of each frame.
+*   **Flow control:** Controls the data flow within the network.
+*   **Error control:** Detects and corrects the error occurred during the transmission from source to destination.
+*   **Addressing:** Attaches the physical address with the data frames so that individual machines can be easily identified.
+*   **Link management:** Manages the initiation, maintenance, and termination of the link between the source and destination for the effective exchange of data.
+
 #### 3. Network Layer (Layer 3)  
 **Function:** This layer is responsible for determining the best physical path for data to travel from the source to the destination using logical addressing (IP addresses).  
 **Examples:** Routers, IP (Internet Protocol), ICMP (Internet Control Message Protocol).
+
+*   The network layer converts the logical address into the physical address.
+*   The routing concept means it determines the best route for the packet to travel from source to the destination.
+
+**Functions of Network Layer:**
+*   **Routing:** Determines the best route from source to destination.
+*   **Logical addressing:** Defines the addressing scheme to identify each device uniquely.
+*   **Packetizing:** Receives the data from the upper layer and converts the data into **packets**.
+*   **Internetworking:** Provides the logical connection between different types of networks for forming a bigger network.
+*   **Fragmentation:** A process of dividing the packets into fragments.
 
 #### 4. Transport Layer (Layer 4)  
 **Function:** Ensures reliable data transfer between devices or hosts by providing flow control, error checking, and recovery of data. It breaks data into segments and ensures the correct delivery order.  
@@ -350,18 +798,43 @@ The Open Systems Interconnection (OSI) model is a conceptual framework that stan
 - **TCP (Transmission Control Protocol):** Reliable communication.  
 - **UDP (User Datagram Protocol):** Faster, connectionless communication.
 
+*   It delivers the message through the network and provides error checking so that no error occurs during the transfer of data.
+*   **It provides two kinds of services:**
+    *   **Connection-oriented transmission:** The receiver sends the acknowledgement to the sender after the packet has been received.
+    *   **Connectionless transmission:** The receiver does not send the acknowledgement to the sender.
+
 #### 5. Session Layer (Layer 5)  
 **Function:** Manages and controls the establishment, maintenance, and termination of communication sessions between devices. It handles session restoration and synchronization.  
 **Examples:** RPC (Remote Procedure Call), NetBIOS.
+
+*   The main responsibility is beginning, maintaining, and ending the communication between the devices.
+*   The session layer also reports the error coming from the upper layers.
+*   The session layer establishes and maintains the session between the two users.
 
 #### 6. Presentation Layer (Layer 6)  
 **Function:** This layer translates or formats data for the application layer. It handles encryption, compression, and data translation between different formats.  
 **Examples:** SSL (Secure Socket Layer), encryption formats like ASCII, EBCDIC.
 
+
+*   The presentation layer is also known as a **Translation layer**.
+*   It translates the data from one format to another format.
+*   At the sender side, this layer translates the data format used by the application layer to the common format.
+*   At the receiver side, this layer translates the common format into a format used by the application layer.
+**Functions of Presentation Layer:**
+*   Character code translation.
+*   Data conversion.
+*   Data compression.
+*   Data encryption.
+
+
 #### 7. Application Layer (Layer 7)  
 **Function:** The topmost layer that interacts directly with end-users. It provides services such as email, file transfer, and web browsing.  
 **Protocols:** HTTP (HyperText Transfer Protocol), FTP (File Transfer Protocol), SMTP (Simple Mail Transfer Protocol), DNS (Domain Name System).
 
+*   Application layer enables the user to access the network.
+*   It is the **topmost layer** of the OSI reference model.
+*   **Application layer protocols** include File Transfer Protocol (FTP), Simple Mail Transfer Protocol (SMTP), Domain Name System (DNS), etc..
+*   The most widely used application protocol is **HTTP** (Hypertext Transfer Protocol). A user sends the request for the web page using HTTP.
 ***
 
 ### Layering and Protocols  
@@ -385,6 +858,15 @@ Each layer in the OSI model has a specific set of protocols that define how data
 - **Scalability and Flexibility:** Networks can be modified or expanded without affecting the whole system, as each layer works independently.
 
 ## Chapter 1.3.: TCP/IP Model
+
+The TCP/IP Reference Model is a **compressed version of the OSI model** with only 4 layers. It was developed by the US Department of Defence (DoD) in the 1860s. The name of this model is based on 2 standard protocols used: TCP (Transmission Control Protocol) and IP (Internet Protocol).
+
+| Layer Name | Functionality | Examples |
+| :--- | :--- | :--- |
+| **1. Link** | Decides which links, such as serial lines or classic Ethernet, must be used to meet the needs of the connectionless internet layer. | Sonet, Ethernet. |
+| **2. Internet** | The most important layer which holds the whole architecture together. It delivers the IP packets where they are supposed to be delivered. | IP, ICMP. |
+| **3. Transport** | Functionality is almost the same as the OSI transport layer. It enables peer entities on the network to carry on a conversation. | TCP, UDP (User Datagram Protocol). |
+| **4. Application** | Contains all the higher-level protocols. | HTTP, SMTP, RTP, DNS. |
 
 The TCP/IP model, also known as the Internet Protocol Suite, is a conceptual framework used for network communications. It consists of four layers that work together to manage data transmission over networks, such as the internet. Each layer handles a specific set of functions to ensure that data can travel from one device to another, even if they are located on different networks. The TCP/IP model is simpler and more practical than the OSI model and has become the foundational model for network communication.
 
@@ -535,7 +1017,24 @@ The TCP/IP model is streamlined with only four layers compared to the OSI model�
 | Tree Topology | A combination of star and bus topology, where groups of star-configured networks are connected to a central bus.                                                                  | - Scalable and allows for easy expansion.<br>- Centralized management.<br>- Hierarchical structure allows for segmentation of different network parts.            | - Failure of the backbone will disrupt the entire network.<br>- Requires a lot of cabling and hardware.                                          |
 | Mesh Topology | Every device is connected to every other device. Can be fully connected (each device has a direct link to all others) or partially connected.                                    | - High redundancy and fault tolerance (failure of one link doesn’t affect the network).<br>- Data can be routed along multiple paths.                              | - Expensive and complex to install due to extensive cabling.<br>- Maintenance is challenging, especially in large networks.                         |
 
+> Hybrid Topology
+> *   A hybrid topology is a combination of different topologies to form a resulting topology.
+> *   If a star topology is connected with another star topology, it remains a star topology.
+> *   If a star topology is connected with a different topology, then it becomes a Hybrid topology.
+> *   It provides **flexibility** as it can be implemented in a different network environment.
+
 ## Chapter 1.5.: Categories of Networks
+
+| Network Type | Description | Range/Location | Example Devices |
+| :--- | :--- | :--- | :--- |
+| **PAN (Personal Area Network)** | Created for personal use. Generally, personal devices are connected to this network. | Range limit is up to **10 meters**. | Computers, telephones, fax, printers. |
+| **LAN (Local Area Network)** | Used for a small geographical location. | Office, hospital, school. | N/A |
+| **HAN (House Area Network)** | Actually a LAN that is used within a house. | Within a house. | Personal computers, phones, printers. |
+| **CAN (Campus Area Network)** | A connection of devices within a campus area which links to other departments of the organization within the same campus. | Campus area. | N/A |
+| **MAN (Metropolitan Area Network)** | Used to connect devices which span to large cities like metropolitan cities. | Over a wide geographical area. | N/A |
+| **WAN (Wide Area Network)** | Used over a wide geographical location. | May range to connect cities and countries. | N/A |
+| **GAN (Global Area Network)** | Uses satellites to connect devices. | Over the global area. | N/A |
+
 
 | Network Type | Description                                                                                                    | Advantages                                                                                       | Disadvantages                                                                                  |
 |--------------|----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
@@ -543,6 +1042,7 @@ The TCP/IP model is streamlined with only four layers compared to the OSI model�
 | WAN          | A network that spans a large geographic area, often connecting multiple LANs across cities, countries, or even globally. | - Can cover large distances.<br>- Facilitates global communication.<br>- Allows organizations to connect remote branches. | - High setup and maintenance costs.<br>- Lower data transfer speeds compared to LANs.<br>- Complex management. |
 | PAN          | A small network that connects personal devices (e.g., smartphones, laptops, wearables) within a short range, typically around 10 meters. | - Low cost and easy to set up.<br>- Useful for personal device connectivity (e.g., Bluetooth, Wi-Fi). | - Limited range and coverage.<br>- Suitable only for personal use or small areas.             |
 | MAN          | A network that covers a larger geographic area than a LAN but is smaller than a WAN, often spanning a city or large campus. | - Covers a large area such as a city.<br>- Can provide high-speed internet or connectivity for a city or region. | - Expensive to build and maintain.<br>- More complex to manage than LAN.                     |
+
 
 ## Chapter 1.6.: Network Architectures
 
@@ -1305,6 +1805,7 @@ TCP congestion control prevents network congestion by adjusting the rate of data
 | Use Case              | Suitable for file transfer, web traffic                        | Suitable for streaming, gaming            |
 | Speed                 | Slower due to overhead                                         | Faster due to minimal overhead            |
 
+
 # Others
 ## OSI Model and Network Concepts
 
@@ -1449,98 +1950,18 @@ A **firewall** is a security device (hardware or software) that monitors and fil
 - **What is DNS caching, and how does it improve performance?**
   - DNS caching stores DNS query results locally for a specified duration (TTL). It reduces DNS lookup time and decreases DNS server load by resolving domain names faster.
 
-
-# More
-
-## 1. Computer Networks Overview
-
-A **network** is defined as a set of devices connected with a physical media link. In a network, two or more nodes are connected by a physical link, or two or more networks are connected by one or more nodes. Essentially, a network is a collection of devices connected to each other to allow the sharing of data.
-
-## 2. Network Topology
-
-**Network Topology** specifies the layout of a computer network. It shows how devices and cables are connected to each other.
-
-### Types of Network Topology
-
-#### A. Star Topology
-
-*   Star topology is a network topology where all the nodes are connected to a single device known as a **central device**.
-*   It requires more cable compared to other topologies.
-*   It is more **robust** because a failure in one cable will only disconnect a specific computer connected to that cable.
-*   If the central device is damaged, the whole network fails.
-*   Star topology is very easy to install, manage, and troubleshoot.
-*   It is commonly used in office and home networks.
-
-#### B. Ring Topology
-
-*   Ring topology is a network topology in which nodes are exactly connected to two or more nodes, forming a single continuous path for transmission.
-*   It does not need any central server to control the connectivity among the nodes.
-*   If a single node is damaged, the whole network fails.
-*   Ring topology is very rarely used as it is expensive, difficult to install, and manage.
-*   **Examples** of Ring topology are SONET network and SDH network.
-
-#### C. Bus Topology
-
-*   Bus topology is a network topology where all the nodes are connected to a single cable known as a **central cable or bus**.
-*   It acts as a shared communication medium.
-*   If any device wants to send data to other devices, it sends the data over the bus, which in turn sends the data to all the attached devices.
-*   Bus topology is useful for a small number of devices.
-*   If the bus is damaged, the whole network fails.
-
-#### D. Mesh Topology
-
-*   Mesh topology is a network topology where all the nodes are individually connected to other nodes.
-*   It does not need any central switch or hub to control the connectivity among the nodes.
-*   It is **robust** because a failure in one cable will only disconnect the specified computer connected to this cable.
-*   Mesh topology is rarely used as installation and configuration are difficult when connectivity increases.
-*   Cabling cost is high because it requires bulk wiring.
-*   **Mesh topology is categorized into two parts:**
-    *   **Fully connected mesh topology:** In this topology, all the nodes are connected to each other.
-    *   **Partially connected mesh topology:** In this topology, all the nodes are not connected to each other.
-
-#### E. Tree Topology
-
-*   Tree topology is a combination of star and bus topology.
-*   It is also known as the **expanded star topology**.
-*   In tree topology, all the star networks are connected to a single bus.
-*   **Ethernet protocol** is used in this topology.
-*   The whole network is divided into segments known as star networks which can be easily maintained.
-*   If one segment is damaged, there is no effect on other segments.
-*   Tree topology depends on the **"main bus,"** and if it breaks, the whole network gets damaged.
-
-#### F. Hybrid Topology
-
-*   A hybrid topology is a combination of different topologies to form a resulting topology.
-*   If a star topology is connected with another star topology, it remains a star topology.
-*   If a star topology is connected with a different topology, then it becomes a Hybrid topology.
-*   It provides **flexibility** as it can be implemented in a different network environment.
-
-## 3. Different Types of Networks
-
-Networks can be divided on the basis of the area of distribution.
-
-| Network Type | Description | Range/Location | Example Devices |
-| :--- | :--- | :--- | :--- |
-| **PAN (Personal Area Network)** | Created for personal use. Generally, personal devices are connected to this network. | Range limit is up to **10 meters**. | Computers, telephones, fax, printers. |
-| **LAN (Local Area Network)** | Used for a small geographical location. | Office, hospital, school. | N/A |
-| **HAN (House Area Network)** | Actually a LAN that is used within a house. | Within a house. | Personal computers, phones, printers. |
-| **CAN (Campus Area Network)** | A connection of devices within a campus area which links to other departments of the organization within the same campus. | Campus area. | N/A |
-| **MAN (Metropolitan Area Network)** | Used to connect devices which span to large cities like metropolitan cities. | Over a wide geographical area. | N/A |
-| **WAN (Wide Area Network)** | Used over a wide geographical location. | May range to connect cities and countries. | N/A |
-| **GAN (Global Area Network)** | Uses satellites to connect devices. | Over the global area. | N/A |
-
-### Virtual Private Network (VPN)
+## Virtual Private Network (VPN)
 
 **VPN** or the **Virtual Private Network** is a private WAN (Wide Area Network) built on the internet. It allows the creation of a secured tunnel (protected network) between different networks using the internet (public network). By using the VPN, a client can connect to the organization’s network remotely.
 
-#### Advantages of VPN
+### Advantages of VPN
 
 1.  VPN is used to connect offices in different geographical locations remotely. It is cheaper when compared to WAN connections.
 2.  VPN is used for secure transactions and confidential data transfer between multiple offices located in different geographical locations.
 3.  VPN keeps an organization’s information secured against any potential threats or intrusions by using **virtualization**.
 4.  VPN encrypts the internet traffic and disguises the online identity.
 
-#### Types of VPN
+### Types of VPN
 
 1.  **Access VPN:**
     *   Used to provide connectivity to remote mobile users and telecommuters.
@@ -1552,7 +1973,7 @@ Networks can be divided on the basis of the area of distribution.
         *   **Intranet VPN:** Useful for connecting remote offices in different geographical locations using shared infrastructure (internet connectivity and servers) with the same accessibility policies as a private WAN (wide area network).
         *   **Extranet VPN:** Uses shared infrastructure over an intranet, and connects suppliers, customers, partners, and other entities using dedicated connections.
 
-## 4. Addressing and Network Models
+## Addressing and Network Models
 
 ### IPv4 Address
 
@@ -1568,90 +1989,7 @@ IPv4 classes are differentiated based on the number of hosts it supports on the 
 | D | 224.0.0.0 | 239.255.255.255 | Reserved for Multicasting |
 | E | 240.0.0.0 | 255.255.255.254 | Study and R&D |
 
-### OSI (Open System Interconnections) Model
-
-The OSI model is a network architecture model based on the ISO standards. It is called the OSI model because it deals with connecting the systems that are open for communication with other systems. The OSI model has **seven layers**.
-
-#### Principles used to arrive at the Seven Layers:
-
-1.  Create a new layer if a different abstraction is needed.
-2.  Each layer should have a well-defined function.
-3.  The function of each layer is chosen based on internationally standardized protocols.
-
-#### Seven Layers of the OSI Model
-
-1.  **Physical Layer**
-    *   It is the lowest layer of the OSI reference model.
-    *   It is used for the transmission of an unstructured raw bit stream over a physical medium.
-    *   The physical layer transmits the data either in the form of electrical/optical or mechanical form.
-    *   The physical layer is mainly used for the physical connection between the devices.
-    *   Physical connection can be made using twisted-pair cable, fibre-optic, or wireless transmission media.
-
-2.  **Data Link Layer**
-    *   It is used for transferring the data from one node to another node.
-    *   It receives the data from the network layer and converts the data into **data frames**.
-    *   It then attaches the physical address to these frames, which are sent to the physical layer.
-    *   It enables the **error-free transfer of data** from one node to another node.
-
-    **Functions of Data Link Layer:**
-    *   **Frame synchronization:** Converts data into frames and ensures that the destination must recognize the starting and ending of each frame.
-    *   **Flow control:** Controls the data flow within the network.
-    *   **Error control:** Detects and corrects the error occurred during the transmission from source to destination.
-    *   **Addressing:** Attaches the physical address with the data frames so that individual machines can be easily identified.
-    *   **Link management:** Manages the initiation, maintenance, and termination of the link between the source and destination for the effective exchange of data.
-
-3.  **Network Layer**
-    *   The network layer converts the logical address into the physical address.
-    *   The routing concept means it determines the best route for the packet to travel from source to the destination.
-
-    **Functions of Network Layer:**
-    *   **Routing:** Determines the best route from source to destination.
-    *   **Logical addressing:** Defines the addressing scheme to identify each device uniquely.
-    *   **Packetizing:** Receives the data from the upper layer and converts the data into **packets**.
-    *   **Internetworking:** Provides the logical connection between different types of networks for forming a bigger network.
-    *   **Fragmentation:** A process of dividing the packets into fragments.
-
-4.  **Transport Layer**
-    *   It delivers the message through the network and provides error checking so that no error occurs during the transfer of data.
-    *   **It provides two kinds of services:**
-        *   **Connection-oriented transmission:** The receiver sends the acknowledgement to the sender after the packet has been received.
-        *   **Connectionless transmission:** The receiver does not send the acknowledgement to the sender.
-
-5.  **Session Layer**
-    *   The main responsibility is beginning, maintaining, and ending the communication between the devices.
-    *   The session layer also reports the error coming from the upper layers.
-    *   The session layer establishes and maintains the session between the two users.
-
-6.  **Presentation Layer**
-    *   The presentation layer is also known as a **Translation layer**.
-    *   It translates the data from one format to another format.
-    *   At the sender side, this layer translates the data format used by the application layer to the common format.
-    *   At the receiver side, this layer translates the common format into a format used by the application layer.
-
-    **Functions of Presentation Layer:**
-    *   Character code translation.
-    *   Data conversion.
-    *   Data compression.
-    *   Data encryption.
-
-7.  **Application Layer**
-    *   Application layer enables the user to access the network.
-    *   It is the **topmost layer** of the OSI reference model.
-    *   **Application layer protocols** include File Transfer Protocol (FTP), Simple Mail Transfer Protocol (SMTP), Domain Name System (DNS), etc..
-    *   The most widely used application protocol is **HTTP** (Hypertext Transfer Protocol). A user sends the request for the web page using HTTP.
-
-### TCP/IP Reference Model
-
-The TCP/IP Reference Model is a **compressed version of the OSI model** with only 4 layers. It was developed by the US Department of Defence (DoD) in the 1860s. The name of this model is based on 2 standard protocols used: TCP (Transmission Control Protocol) and IP (Internet Protocol).
-
-| Layer Name | Functionality | Examples |
-| :--- | :--- | :--- |
-| **1. Link** | Decides which links, such as serial lines or classic Ethernet, must be used to meet the needs of the connectionless internet layer. | Sonet, Ethernet. |
-| **2. Internet** | The most important layer which holds the whole architecture together. It delivers the IP packets where they are supposed to be delivered. | IP, ICMP. |
-| **3. Transport** | Functionality is almost the same as the OSI transport layer. It enables peer entities on the network to carry on a conversation. | TCP, UDP (User Datagram Protocol). |
-| **4. Application** | Contains all the higher-level protocols. | HTTP, SMTP, RTP, DNS. |
-
-## 5. Key Protocols and Differences
+## Key Protocols and Differences
 
 ### HTTP and HTTPS
 
@@ -1723,7 +2061,7 @@ The main elements of a protocol are:
 | **Provider** | Provided by the NIC Card’s Manufacturer. | Provided by the Internet Service Provider. |
 | **Use** | Both are used to uniquely define a device on the internet. | Both are used to uniquely define a device on the internet. |
 
-## 6. Commands, Devices, and Network Concepts
+## Commands, Devices, and Network Concepts
 
 ### Configuration Commands
 
@@ -1840,423 +2178,6 @@ The processes on each machine that communicate at a given layer are called **pee
 | **Multicasting** | The message is sent to a **subset of nodes** from the source. | Used to send the same data to multiple receivers. |
 | **Broadcasting** | The message is sent to **all the nodes** in a network from a source. | DHCP and ARP in the local network use broadcasting. |
 
-# Computer Networks World
-
-## Computer Networks Fundamentals and Context
-
-### Introduction and Subject Scope
-
-This content is derived from an in-class recording of a computer network class. The goal is to provide fundamental knowledge necessary for coding interviews and placements.
-
-**Computer Networks** is considered a lighter subject compared to Operating Systems (OS). There are only a few fundamental things that need to be known, and understanding these will allow most questions to be answered.
-
-Networks are more important than subjects like Compilers or Computer Organization and Architecture (COA) because networks are essentially the **backbone of the internet today**.
-
-Key topics covered include:
-*   The network stack.
-*   How actual data transfers happen hop-to-hop.
-*   Understanding the ARP protocol, routing tables, MAC address tables, and how sender/receiver tables are populated.
-*   How data packets travel and how headers are changed.
-
-### Transition from Operating Systems (OS)
-
-Previously, OS was discussed as sitting on the computer and working as a program manager. OS manages everything, including:
-*   How processes and functions interact.
-*   How code gets executed and reaches the core.
-*   Managing memory and writing things to disk.
-
-The understanding built around OS was that it handles everything internally within the computer.
-
-### The Need for the Internet
-
-People desired more features and wanted to create **the Internet**, allowing computers and things on the globe to connect.
-
-The requirement was to run programs on *some other computer* and receive the results in one's own browser, rather than just running programs compiled and executed on the same computer. This requirement led to the development of ideas on how to support these connections.
-
-Key questions that arose included:
-1.  How does the data travel across the network?
-2.  How to design independent pieces of software (like Chrome browser or server software).
-
-A common interview question is: **"How does the Internet work?"** or specific details like, **"When you type google.com, how is that served?"**.
-
-## Client-Server Model and Basic Flow
-
-### Defining Client and Server
-
-A **Client** is the computer or entity where the browser is running, which raises a request to view a page and receives the result.
-*   Generally, **anything that starts the process** is the client.
-*   The client requests a resource or data.
-
-A **Server** processes the request and sends a response.
-*   A **Web Server** specifically processes HTTP/HTTPS requests received over the internet.
-*   Servers can exist for other contexts as well.
-
-### Protocols and Data Packets
-
-People defined certain **Protocols**.
-*   A protocol is like a language needed to communicate.
-*   Protocols are a fixed set of rules.
-
-What is sent on the internet is called **Data Packets**.
-*   Anything traveling on the internet is called a data packet.
-
-An example of a protocol is **HTTP** (Hypertext Transfer Protocol). When a user types a URL (e.g., `www.google.com`), an HTTP request is made following the protocol and sent onto the internet.
-
-### Basic Request/Response Flow (HTTP)
-
-1.  The client types a URL (e.g., `www.google.com`).
-2.  The client sends an **HTTP request** onto the Internet.
-3.  The request travels to the server where the backend/server code resides.
-4.  The server reads the HTTP request, processes it, and generates an **HTTP response**.
-5.  The HTTP response travels back across the Internet.
-6.  The client's browser receives the data and displays it on the web page.
-
-The fundamental challenge in this flow is **how the data travels magically across the internet**.
-
-## Addressing Systems
-
-### The Need for Addressing
-
-Since many computers and web servers (which are also just computers running specific software) are connected to the Internet, a way to know where to send the data is required.
-
-Just like ordering food requires an address for pickup (restaurant) and delivery (user), **some sort of addressing system must be built**.
-
-### IP Addresses (Computer Identification)
-
-The required address is known as the **IP Address** (Internet Protocol Address).
-
-Every computer on the internet has an IP Address.
-*   Example format: `192.168.1.1`.
-*   **IPv4** (Fourth Version of IP) uses numbers separated by dots, generally using 256 numbers possible for each segment.
-
-If a computer's IP address is known, one can type it into the browser to reach that address (e.g., trying to open `8.8.8.8` which is Google’s Public DNS).
-
-### Ports (Application Identification)
-
-There is a need for a **two-phase addressing system**:
-1.  Which computer should the response go to (IP Address).
-2.  Inside that computer, which application/window should receive the response (Port).
-
-Different applications run on different ports within a computer.
-*   Example: A web server might be hosted at a specific IP address and a specific port.
-*   **HTTP** by default uses port **80**. Web servers typically open at port 80.
-
-### DNS (Domain Name System)
-
-IP addresses are not fixed, or if they are fixed, knowing a new computer's IP address is difficult. People built simpler systems to help identify resources.
-
-People rely on **Domain Names** (e.g., `google.com`).
-
-#### DNS Resolution Process
-DNS acts like a **phone book system**.
-*   It is a function that takes a domain name and converts it to its corresponding IP address.
-*   This process is necessary because IP addresses can change dynamically.
-
-When a request is made:
-1.  The request first goes to the **DNS Resolver**, usually owned by the Internet Service Provider (ISP).
-2.  The DNS Resolver checks its **cache**.
-
-#### Caching Mechanisms
-*   The DNS Resolver has its own cache to save recently resolved domain names.
-*   A **TTL** (Time To Live) defines how long a record stays in the cache. If the same domain (e.g., `example.com`) is asked repeatedly within the TTL, the cached result is returned directly.
-*   Caching is implemented at every level (user application, PC, DNS Resolver).
-*   When space limits caching, the **LRU (Least Recently Used)** eviction policy is typically used.
-
-#### Hierarchical Structure
-If a domain (e.g., `www.example.com`) is new and not in the cache, the DNS Resolver uses a hierarchical structure:
-1.  It asks the **DNS Root Name Server** for the Name Server of the Top-Level Domain (TLD), e.g., `.com`.
-2.  The Root Server returns the Name Server for the TLD.
-3.  The Resolver then asks the TLD Name Server (e.g., the `.com` Name Server) for the name server managing `example.com`.
-4.  The TLD Name Server returns the IP address of the **Authoritative Name Server** (often hosted by services like AWS Route 53 or GoDaddy) that knows the final IP address.
-5.  The hosting service (e.g., GoDaddy) registers the domain with the TLD name server.
-
-#### Name Records
-DNS involves specific record types, such as:
-*   **A Records** (Address Records).
-*   **C Name Records** (Canonical Name Records).
-*   *Note: Detailed understanding of DNS records is often not required in general interviews*.
-
-If multiple IP addresses are returned for a domain (e.g., two addresses for a website), generally any one can be connected to.
-
-## High-Level Internet Picture
-
-The "Internet" symbol (the globe) is often the **biggest piece of illusion** for developers, as the actual data travel path is complex.
-
-### Infrastructure Components
-
-When a request is sent, the flow includes:
-1.  **DNS resolution** (Root Name Server, TLD, etc.).
-2.  An **HTTP request** is made.
-3.  **TCP/IP magic** happens.
-4.  The request goes through **Load Balancers**.
-5.  The request reaches **Application Servers**.
-6.  The response travels back.
-
-All these pieces (Load Balancers, Firewalls, Servers) are built using either hardware or software, and all can be coded. Algorithms are used, for example, in Load Balancer code.
-
-### Cloud Computing Definition
-
-**Cloud computing** provides ready-made templates for infrastructure pieces (like small computers/servers).
-*   Users do not need to host their own computers or servers.
-*   The cloud provider provides the hardware at a remote location.
-*   The user only needs to write the software inside it.
-
-## Web Development Basics (Front-end & Back-end)
-
-Web development involves writing code that runs on two primary locations:
-
-1.  **Front-end:** The piece of software that runs on your browser (e.g., Chrome).
-2.  **Back-end:** The piece of software that runs on the web server.
-
-### Core Front-end Languages
-
-To display content on a browser, developers must generally learn three famous languages:
-
-| Language | Full Form | Purpose |
-| :--- | :--- | :--- |
-| **HTML** | HyperText Markup Language | Used to create the **skeletal structure** or markup. Tells the browser what to put in the head, body, etc.. |
-| **CSS** | Cascading Style Sheets | Used for styling, such as defining colors, background colors, height, and width. |
-| **JavaScript** | | Used to define interactions (e.g., what happens when clicked, making things pop up or disappear). JS can change the HTML structure, known as the **DOM (Document Object Model)**. |
-
-#### Types of HTML
-1.  **Non-semantic HTML:** Uses general tags like `div` for nesting and structure without conveying meaning.
-2.  **Semantic HTML:** Uses specific names like `header`, `nav`, or `aside`. These have special purposes and are picked up by automated scrapers/bots, which helps with SEO (Search Engine Optimization) and ranking pages.
-
-When a web server receives a request for a website, it sends all three components: HTML, CSS, and JavaScript.
-
-### Rendering Strategies
-
-When HTML is fetched, it is initially a basic skeleton (`index.html`). Then CSS is requested to style it, and JavaScript is run to handle interactions. Frameworks and libraries (like Angular and React) help developers avoid writing repetitive HTML/CSS code.
-
-Two rendering strategies exist:
-
-1.  **Client-Side Rendering (CSR):**
-    *   The server sends the HTML file and JavaScript.
-    *   The HTML is initially ugly or incomplete.
-    *   The JavaScript downloads and runs on the browser (client), calling other APIs or fetching data to build the rest of the page.
-    *   The page is not fully formed or visible until the JavaScript runs. React is a framework that primarily uses CSR.
-
-2.  **Server-Side Rendering (SSR):**
-    *   The server sends a **ready-to-render HTML** page.
-    *   The HTML loads instantly on the page.
-    *   JavaScript arrives later to handle interaction and functionality.
-    *   SSR helps with SEO because the content loads immediately. Next.js became popular because it explicitly provided methods for SSR.
-
-### Abstraction in Development (Frameworks)
-
-Frameworks simplify development by providing pre-packaged functionality.
-
-*   **Front-end frameworks:** React, Angular.
-*   **Back-end frameworks:** Express (Node/JavaScript), Ruby on Rails, Django (Python).
-
-Frameworks are used to prevent writing the same code repeatedly. Stacks (e.g., MERN, MEAN) are created so that companies can find mass-trained engineers compatible with their existing codebases.
-
-### API Calls and Routing
-
-In web development, code often uses wrapper functions to request data.
-**Example React code:**
-```javascript
-fetch("/api/data") 
-// When the app loads, it fetches /api/data.
-// When response comes, it uses data to build the page. 
-```
-*   `/api/data` is called a **route**.
-*   The code makes an API call to the server using this route.
-
-The framework provides a massive abstraction layer:
-1.  **Front-end:** A simple `fetch` request is sent. The framework handles creating the HTTP request, encrypting it, sending it over the internet, and retrieving the response.
-2.  **Back-end:** The server code is set up to detect when a specific route (e.g., `/api/data`) is called. If the request matches the route, a corresponding function runs, and the server generates and sends an HTTP response (e.g., a JSON response).
-
-This abstraction simplifies the process, hiding the complexities of network connections and kernel handling. Specialized engineers (e.g., those in High-Frequency Trading or working for companies like Cisco) often work on optimizing the internals of this stack to reduce latency (e.g., bypassing the kernel and writing their own network stack).
-
-## The Network Stack (OSI & TCP/IP Models)
-
-The complexity of data transfer across the network is handled by the Network Stack. This stack is supported by network engineers.
-
-### Introduction to the Stack
-
-The stack acts as a magical pipe where a data input (e.g., an HTTP packet) is inserted on one end and the exact same data must be output on the other end.
-
-The purpose of the layered approach is similar to OS: breaking the complex problem into parts so that different people can work on independent software/hardware pieces.
-
-### Layered Architecture
-
-The standard model is the **OSI Model**, consisting of seven layers:
-
-1.  Application Layer
-2.  Presentation Layer
-3.  Session Layer
-4.  Transport Layer
-5.  Network Layer
-6.  Data Link Layer
-7.  Physical Layer
-
-The **TCP/IP Model** combines the first three (Application, Presentation, Session) into a single **Application Layer**.
-
-### Encapsulation Process (Adding Headers)
-
-As data moves down the stack, each layer encapsulates the data received from the layer above by adding its own control information in the form of a **header**.
-
-1.  The Application Layer generates the HTTP data/packet.
-2.  The Transport Layer takes this HTTP packet and adds its own header.
-3.  The Network Layer takes the resultant data and adds its own header.
-4.  The Data Link Layer takes the resultant data and adds its own header.
-
-Headers are added to support the specific function that the corresponding layer needs to perform.
-
-### Layer Functionalities
-
-The network stack is present on every computer, router, and device connected to the internet.
-
-| Layer | Function/Role | Details |
-| :--- | :--- | :--- |
-| **Application Layer** | Generates the HTTP packet. | This is where the application (e.g., React) runs. |
-| **Presentation Layer** | Handles data format and encoding. | Determines the language the data is written in (e.g., JSON, encoding type, compression/zipping). Handles optimization/sizing. |
-| **Session Layer** | Manages sessions between two end-to-end applications. | Handles credentials, checks progress (checkpoints), and aids in resuming data transfer if data is arriving in parts (synchronization). |
-| **Transport Layer** | **End-to-End Guaranteed Delivery**. | Takes data from the application layer and ensures it reaches the transport layer of the destination computer. |
-| **Network Layer (L3)** | **Best-effort routing** from computer to computer. | Uses IP addresses (Source IP, Destination IP) to determine the route. No guarantee of delivery; packets may drop. |
-| **Data Link Layer (L2)** | **Hop-to-Hop delivery**. | Manages data transfer within a single network segment (from one computer/switch to the next router/hop). Handles collision detection (`CSMA CD`) and traffic framing. |
-| **Physical Layer** | Transfers raw **0s and 1s** across the medium (wire/hardware). | This layer is purely hardware. |
-
-**Transport Layer Details:**
-*   It works at a **Port-to-Port Level** (Source Port to Destination Port).
-*   It uses **Sequence Numbers** to ensure that data pieces (segments) are synchronized and can be reassembled correctly at the destination.
-*   It uses **Acknowledgement Numbers**.
-*   It handles congestion control and uses the Network Layer as a wrapper/API. If the Network Layer drops a packet, the Transport Layer manages re-sending it.
-
-**Decapsulation (Data Arrival):**
-When a data packet arrives at the destination, the process reverses:
-1.  The outermost header (L2) is checked. If the MAC address matches, L2 is stripped off.
-2.  The L3 (IP) header is checked. If the Destination IP matches, L3 is stripped off.
-3.  The Transport (L4) header is checked (Port number). L4 is stripped off, and the data is passed to the correct application running on that port.
-4.  The application code (e.g., Python/Node) receives the raw data and the HTTP headers (e.g., the route requested) to process it.
-
-## Detailed Data Packet Transfer Simulation (Hop-to-Hop)
-
-When a packet travels across the internet, it moves between various network devices.
-
-### Network Hops
-
-*   The data starts at the client, passes down the full stack, and goes to the Physical Layer.
-*   It travels to the next device, typically a **Router**.
-*   The Router decodes the packet up to the Network Layer (L3).
-*   The Router checks the Destination IP Address. If the packet is not intended for the Router, the Router looks at its routing tables to see where to forward it.
-*   The Network Layer headers are opened repeatedly at every hop (Router) to determine the next destination.
-*   The Transport Layer headers are only opened at the final destination server to handle reassembly and application delivery.
-
-### Key Network Components
-
-1.  **Switches:** Generally take data from one place and send it to everyone else in their local network (dumb machine).
-2.  **Routers (Gateways):** Smartly connect one entire connection (network) to another connection. A **Getway Router** handles conversion between two potentially large, distinct networks. Routers are powerful, capable of changing L3 data (network layer).
-
-### Addressing Mechanisms (IP vs. MAC Address)
-
-| Address Type | Description | Layer | Flexibility |
-| :--- | :--- | :--- | :--- |
-| **IP Address** | Logical address (e.g., `192.168.x.x`). | Network Layer (L3). | Can change (e.g., when disconnecting/reconnecting a device, DHCP allocates a new one). |
-| **MAC Address** | Physical address of a network chip/hardware. | Data Link Layer (L2). | Fixed at the time of manufacturing; cannot be changed. |
-
-IP addresses are allocated hierarchically (e.g., a router allocates a common network portion, and unique addresses for connected devices). **DHCP (Dynamic Host Configuration Protocol)** is the protocol used to allocate IP addresses dynamically.
-
-### Core Tables Maintained
-
-Three critical tables are maintained for data transfer:
-
-1.  **ARP Table (Address Resolution Protocol Table):** Maps an IP address to a corresponding MAC address. Every computer (sender/receiver) maintains its own ARP table.
-2.  **MAC Address Table (Switching Table):** Maintained by Switches. Records which MAC address is connected to which physical port on the switch (e.g., Port 1, Port 2).
-3.  **Routing Table:** Maintained by Routers. Defines routing rules based on IP address prefixes (which side/interface handles which IP range).
-
-### Simulation Steps (Detailed Breakdown)
-
-Scenario: A client (`192.168.3.10`) needs to send data to a Server (`192.168.4.142`). The client is connected to a Switch, which connects to a Gateway Router (`.3.1`), which connects to the wider network.
-
-#### Phase 1: Addressing Resolution via ARP
-
-1.  **Packet Generation (L4 & L3):** The client's transport layer adds L4 (TCP) headers (Source Port, Destination Port, Sequence Number). The network layer adds L3 headers (Source IP: `.3.10`, Destination IP: `.4.142`).
-2.  **Destination Check:** The client sees that the Destination IP (`.4.142`) is **not** in its local network (based on prefix). The packet must be sent to the **Gateway**.
-3.  **Identifying Gateway IP:** The client knows its Gateway is usually `.1` (e.g., `192.168.3.1`).
-4.  **ARP Request:** The client needs the MAC address of the Gateway (`.3.1`). It sends an **ARP Request** over the connected wire.
-5.  **Switch Learning:** When the ARP Request reaches the Switch, the Switch records the sender's MAC address (e.g., `AAA`) and the port it arrived on (e.g., Port 1) in its MAC Address Table.
-6.  **Broadcast:** The Switch forwards (broadcasts) the ARP Request to all connected devices.
-7.  **Router Response:** The Router receives the ARP Request for `.3.1`.
-    *   The Router first saves the sender's IP/MAC address mapping (`.3.10` / `AAA`) in its own ARP Table.
-    *   The Router generates an **ARP Response**, providing its MAC address.
-8.  **Targeted Delivery:** The Router sends the ARP Response back to the client. The Switch checks its MAC Address Table, sees that the destination MAC (`AAA`) is on Port 1, and sends the response only to the client.
-9.  **Client Learning:** The client receives the ARP Response and saves the Gateway's IP/MAC address mapping in its ARP Table.
-
-#### Phase 2: Data Transfer to the Gateway
-
-1.  **L2 Encapsulation:** Since the client now knows the Gateway's MAC address, it prepares the L2 (Data Link Layer) header.
-    *   Source MAC Address: Client's MAC (`AAA`).
-    *   Destination MAC Address: Gateway's MAC (`FFF`).
-2.  **Forwarding:** The client sends the full L2-L3-L4 packet to the Switch.
-3.  **Switch Delivery:** The Switch sees the Destination MAC (`FFF`), looks up its MAC Address Table, and forwards the packet only to the Router's port (e.g., Port 3).
-4.  **Decapsulation at Router:** The Router receives the packet, sees its MAC address matches, and **removes the L2 header**.
-5.  **L3 Check:** The Router now sees the L3 header (Destination IP: `.4.142`). The Router determines this destination is on its "other side" (or via another network path).
-
-#### Phase 3: Data Transfer to the Server (Across Router)
-
-The Router follows a similar ARP process to find the MAC address of the final destination Server (`.4.142`) within the next segment.
-
-1.  The Router generates a new ARP Request for `.4.142`.
-2.  The Switch handles the request/response, populating its table with the Server's MAC address (e.g., `CCC`).
-3.  The Router receives the Server's MAC address and updates its ARP table.
-4.  The Router encapsulates the packet again with a new L2 header:
-    *   Source MAC Address: Router's exit interface MAC.
-    *   Destination MAC Address: Server's MAC (`CCC`).
-5.  **Final Delivery:** The packet is forwarded to the Switch. The Switch uses its MAC Address Table to send the packet directly to the Server's port.
-6.  **Final Decapsulation:** The Server receives the packet, validates the L2 and L3 headers, strips them off, and passes the L4 data up to the application.
-
-This entire process occurs in seconds. When the server sends a response, the process repeats, but is often much faster because the MAC/ARP tables are already populated.
-
-## Key Network Concepts and Interview Topics
-
-### Data Transfer Delivery Types
-
-| Term | Corresponding Layer | Description |
-| :--- | :--- | :--- |
-| **Guaranteed Delivery** | Transport Layer | Ensures the complete data packet reaches the destination end-to-end. |
-| **Computer to Computer** | Network Layer | Best effort to route packet segments between two computers. |
-| **Hop to Hop** | Data Link Layer | Ensures data reaches the next sequential point (e.g., from computer to first router). |
-
-### Firewall
-
-A Firewall monitors all incoming data packets.
-*   It looks for malicious content.
-*   It performs **packet filtering**.
-*   It can block traffic at the port level, IP level, or content level.
-*   Firewalls are often implemented in corporate networks.
-
-### Proxy Servers
-
-A Proxy Server acts as an intermediary.
-
-| Type | Function | Use Case |
-| :--- | :--- | :--- |
-| **Forward Proxy** | Sits in front of the client (user/institution). Takes client requests, packages them, and sends them forward. | Institution Access Control: Blocks access to specific sites. Identity Protection: Hides the client's original IP address from the internet. |
-| **Reverse Proxy** | Sits in front of the server. Takes incoming requests before they reach the actual server. | Security: Protects against DoS attacks by dropping excessive packets from a single source. Caching: Serves cached responses for repeated requests. Service Routing: Directs requests to the correct internal service. |
-
-Reverse Proxies can be categorized by the layer of data they inspect:
-*   **L4 Proxies:** Only see data up to the Transport Layer.
-*   **L7 Proxies:** Can see Application Layer data (HTTP headers/content), allowing for better blocking mechanisms. Nginx is a well-known Reverse Proxy software.
-
-### VPN (Virtual Private Network) vs. Proxy
-
-*   **Proxy:** Acts as a replacement/shield. Data still travels over the internet to reach the proxy server, which then raises the request.
-*   **VPN:** Provides a higher level of protection by creating a secure, **encrypted pipe** between the user's computer and the VPN server (which acts as the exit point/proxy).
-    *   VPN software works at the software level on the computer.
-    *   It **encrypts the packets** (including the HTTP request) so that the router or ISP cannot read the data being requested.
-    *   It uses **cryptography** and ensures an **end-to-end connection** that bypasses common internet scrutiny.
-
-### Generational Wireless Networks (3G, 4G, 5G)
-
-The main difference between 3G, 4G, and 5G is the **frequency bands** they operate on. Higher generations generally use higher frequency bands, allowing for faster speeds.
-
-### Other Common Interview Questions
-
-*   **TCP vs. UDP:** Need to know the difference and details of each protocol.
-*   **Topology:** Questions about how wires are connected (e.g., point-to-point, bus, ring topologies) and their benefits.
-*   **Types of Delays** (though considered less important).
 ---
 End-of-File
 
