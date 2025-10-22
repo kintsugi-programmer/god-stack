@@ -10,7 +10,7 @@
 
 - ☑ DSA 1.5 hrs
 - ☑ Dev 1.5 hrs
-- ☑ LeetCode 1–2 questions
+- ☑ LeetCode 1.5 questions 2 hrs
 - ☑ Core CS 1 hr
 - ☑ Revision 1 hr
 - ☑ Workout 1 hr
@@ -24,13 +24,13 @@
 > Resources: Abdul Bari's Mastering Data Structures & Algorithms using C and C++, ChaiCode's Full Stack Web Dev Course with 100xDev's Cohort 3.0, NeetCode 250 DSA Sheet, and Research Docs &YT for Core CS , keeping focus on Revision, Health, Fitness & bit Gaming.
 
 ---
-# DSA_LEETCODE
+# DSA_LEETCODE_MASTERY
 ---
 # DSA_MASTERY
 ---
 # FULLSTACK_WEBDEV
 ---
-# CN
+# CORE_CS_INTERVIEW
 ---
 # OTHERS
 ---
