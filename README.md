@@ -17,7 +17,6 @@
   - [Table of Contents](#table-of-contents)
   - [Kintsugi-Programmer's Challenges](#kintsugi-programmers-challenges)
     - [DEVELOPER\_PRO\_MAX](#developer_pro_max)
-      - [👾 Day x/180 of The DeveloperProMax Challenge](#-day-x180-of-the-developerpromax-challenge)
       - [NOV | FULL | 30 Days](#nov--full--30-days)
       - [DEC | FULL | 60 Days](#dec--full--60-days)
       - [JAN | FULL | 90 Days](#jan--full--90-days)
@@ -28,11 +27,8 @@
 ## Kintsugi-Programmer's Challenges
 
 ### DEVELOPER_PRO_MAX
-#### 👾 Day x/180 of The DeveloperProMax Challenge 
 - ⚙️ Build. Deploy. Dominate.
 - 📚 Master DSA, LeetCode, Web Dev, DevOps, and Core CS (OS, CN, DBMS, OOP, SD). 
-
-> Reflections: 
 
 > Developer Pro Max is a 180-day journey to elite developer mastery. From Advanced DSA and Core CS to Full-Stack Web Development, DevOps, and System Design, this challenge is designed to build discipline, depth, and real-world skills. Every day is a step toward becoming a developer who doesn’t just code, but engineers systems, solves problems, and commands the full stack with confidence.
 
