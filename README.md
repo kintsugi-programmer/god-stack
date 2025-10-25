@@ -36,8 +36,6 @@
 
 > Resources: Abdul Bari's Mastering Data Structures & Algorithms using C and C++, ChaiCode's Full Stack Web Dev Course with 100xDev's Cohort 3.0, NeetCode 250 DSA Sheet, Reinforce concepts with Neetcode's DSA Visualization course and Research Docs &YT for Core CS, Sharpen my focus on interview-specific CS topics, keeping focus on Revision, Health, Fitness & bit Gaming.
 
-> Coding, is Meditation
-
 - Checklist
   - DSA LC 250q
   - DEV 100hrs
