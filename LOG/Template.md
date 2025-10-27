@@ -16,30 +16,6 @@
 
 > Resources: Abdul Bari's Mastering Data Structures & Algorithms using C and C++, ChaiCode's Full Stack Web Dev Course with 100xDev's Cohort 3.0, NeetCode 250 DSA Sheet, Reinforce concepts with Neetcode's DSA Visualization course and Research Docs &YT for Core CS, Sharpen my focus on interview-specific CS topics, keeping focus on Revision, Health, Fitness & bit Gaming.
 
-- Checklist
-  - DSA LC 250q
-  - DEV 100hrs
-  - CoreCS 60hrs
-- 4hrs Developing/day => 180 days
-- 60 days -- 2025 Nov Dec
-  - ☑ DSA LeetCode 3 questions 3 hrs (2hrs+1hr Rev) (40mins/q)
-  - ☑ Core CS 0.5 hr
-  - ☑ SocialMedia 0.5 hr PR Y/I/L/G/L
-  - ☑ Workout 0.5 hr
-- 60 days -- 2026 Jan Feb
-  - ☑ DSA LeetCode 1.5 questions 1.5 hrs (1hr+0.5hr Rev) (40mins/q)
-  - ☑ Core CS 0.5 hr
-  - ☑ Dev 1.5 hrs (1hr+0.5hr Rev)
-  - ☑ SocialMedia 0.5 hr PR Y/I/L/G/L
-  - ☑ Workout 0.5 hr
-- 60 days Mar Apr
-  - ☑ Dev 3 hrs (2hrs+1hr Rev)
-  - ☑ Core CS 0.5 hr
-  - ☑ SocialMedia 0.5 hr PR Y/I/L/G/L
-  - ☑ Workout 0.5 hr
-- -- DevProMax180daysChallengeEnd
-- -- College End May
-
 > Coding, is Meditation
 
 - Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
